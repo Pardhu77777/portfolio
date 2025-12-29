@@ -66,8 +66,8 @@ function Header() {
         scrolled ? "border-b border-white/10 bg-black/50 backdrop-blur" : "border-b-0 bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-2">
-        <Link to="/" className="text-lg font-semibold text-cyan-300">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2 md:px-6">
+        <Link to="/" className="text-base font-semibold text-cyan-300 md:text-lg">
           Pardhu Mopidevi
         </Link>
         <nav className="hidden items-center gap-6 text-xs text-slate-200 md:flex">
@@ -103,13 +103,13 @@ function Header() {
             );
           })}
         </nav>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <button
             type="button"
-            className="neon-button hidden scale-[0.92] md:inline-flex"
+            className="neon-button hidden px-4 py-2 text-xs md:inline-flex"
             onClick={() => handleHashClick("#contact")}
           >
-            Let’s Connect
+            Let's Connect
           </button>
           <button
             type="button"
@@ -146,10 +146,10 @@ function Header() {
             ))}
             <button
               type="button"
-              className="neon-button w-fit"
+              className="neon-button w-fit px-4 py-2 text-xs"
               onClick={() => handleHashClick("#contact")}
             >
-              Let’s Connect
+              Let's Connect
             </button>
           </div>
         </div>

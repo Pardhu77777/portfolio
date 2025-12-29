@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { skillGroups } from "../../data/mockData";
+import { skillGroups } from "../../data/portfolioData";
 import TiltCard from "../ui/TiltCard";
 
 function Skills() {
@@ -9,10 +9,11 @@ function Skills() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex items-end justify-between gap-4 flex-wrap">
           <div>
-            <h2 className="section-title">
-              Skills & <span className="text-gradient">Expertise</span>
-            </h2>
-            <p className="section-subtitle">Creative production meets modern web engineering.</p>
+            <h2 className="section-title text-gradient">Skills & Expertise</h2>
+            <p className="section-subtitle">
+              Skill levels represent practical experience and confidence across each role, supported by
+              continuous learning and AI-assisted workflows.
+            </p>
             <div className="section-line" />
           </div>
           <div className="neon-outline">

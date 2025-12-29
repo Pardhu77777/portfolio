@@ -3,6 +3,20 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
 function Contact() {
+  function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const name = formData.get("name") || "";
+    const email = formData.get("email") || "";
+    const subject = formData.get("subject") || "Project Inquiry";
+    const message = formData.get("message") || "";
+    const body = `Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
+    window.location.href = `mailto:mopidevipardhu77@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${body}`;
+  }
+
   return (
     <section id="contact" className="section">
       <div className="mx-auto max-w-6xl px-6">
@@ -11,9 +25,7 @@ function Contact() {
             <span>Get In Touch</span>
           </div>
           <div className="section-line" />
-          <h2 className="section-title mt-4">
-            Let's <span className="text-gradient">Connect</span>
-          </h2>
+          <h2 className="section-title mt-4 text-gradient">Let's Connect</h2>
           <p className="section-subtitle">
             Have a project in mind or just want to say hello? I'd love to hear from you.
           </p>
@@ -29,7 +41,7 @@ function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-slate-400">Email</p>
-                  <p>pardhu@example.com</p>
+                  <p>mopidevipardhu77@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -57,28 +69,31 @@ function Contact() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            onSubmit={(event) => event.preventDefault()}
+            onSubmit={handleSubmit}
           >
             <div className="grid gap-4 md:grid-cols-2">
               <div>
                 <label className="text-sm text-slate-400">Your Name</label>
                 <input
+                  name="name"
                   className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3"
-                  placeholder="John Doe"
+                  placeholder="Your Name"
                 />
               </div>
               <div>
                 <label className="text-sm text-slate-400">Your Email</label>
                 <input
+                  name="email"
                   type="email"
                   className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3"
-                  placeholder="john@example.com"
+                  placeholder="name@gmail.com"
                 />
               </div>
             </div>
             <div>
               <label className="text-sm text-slate-400">Subject</label>
               <input
+                name="subject"
                 className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3"
                 placeholder="Project Inquiry"
               />
@@ -86,6 +101,7 @@ function Contact() {
             <div>
               <label className="text-sm text-slate-400">Message</label>
               <textarea
+                name="message"
                 rows="5"
                 className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3"
                 placeholder="Tell me about your project..."

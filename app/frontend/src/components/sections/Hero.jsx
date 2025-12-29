@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronDown, Clapperboard, Sparkles } from "lucide-react";
-import { roles } from "../../data/mockData";
+import { roles } from "../../data/portfolioData";
 
 function Hero() {
   const [index, setIndex] = useState(0);
@@ -106,8 +106,8 @@ function Hero() {
             <a className="button-ghost" href="#works">
               View My Work
             </a>
-            <a className="neon-button" href="#contact">
-              Let’s Connect <ArrowRight size={16} />
+            <a className="neon-button hidden md:inline-flex" href="#contact">
+              Let's Connect <ArrowRight size={16} />
             </a>
           </div>
           

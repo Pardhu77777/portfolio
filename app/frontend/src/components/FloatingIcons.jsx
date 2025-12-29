@@ -48,15 +48,25 @@ function makeBadge(label, color) {
   return { type: "badge", label, color };
 }
 
+function makeImage(src, label) {
+  return { type: "image", src, label };
+}
+
 const iconSet = [
   makeBadge("Ps", "#00f0ff"),
   makeBadge("Pr", "#a855f7"),
   makeBadge("Ae", "#f43f5e"),
   makeBadge("Gpt", "#22c55e"),
-  makeBadge("Gem", "#3b82f6"),
+  makeBadge("HTML", "#f97316"),
+  makeBadge("CSS", "#38bdf8"),
   makeBadge("JS", "#f59e0b"),
-  makeBadge("TS", "#00f0ff"),
-  makeBadge("CSS", "#a855f7"),
+  makeBadge("TS", "#60a5fa"),
+  makeBadge("G", "#22c55e"),
+  makeBadge("UX", "#a855f7"),
+  makeImage("/assets/vs-code.png", "VS Code"),
+  makeImage("/assets/obs.png", "OBS"),
+  makeImage("/assets/vmix.png", "vMix"),
+  makeImage("/assets/live-stream.png", "Live Stream"),
   { Icon: Paintbrush, color: "#00f0ff" },
   { Icon: Clapperboard, color: "#a855f7" },
   { Icon: Sparkles, color: "#f43f5e" },
@@ -105,6 +115,7 @@ function createIcons() {
       Icon: icon.Icon,
       type: icon.type,
       label: icon.label,
+      src: icon.src,
     };
   });
 }
@@ -146,11 +157,11 @@ function FloatingIcons() {
   }, [isDesktop]);
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden">
+    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
       {icons.map((item) => (
         <motion.div
           key={item.id}
-          className="absolute"
+          className="absolute pointer-events-auto"
           style={{
             left: `${item.initialX}%`,
             top: `${item.initialY}%`,
@@ -164,6 +175,11 @@ function FloatingIcons() {
             translateX: isDesktop ? mouse.x * (item.blur ? 0.3 : 0.5) : 0,
             translateY: isDesktop ? mouse.y * (item.blur ? 0.3 : 0.5) : 0,
           }}
+          whileHover={{
+            scale: 1.2,
+            opacity: 0.9,
+            filter: "drop-shadow(0 0 10px rgba(0,240,255,0.6))",
+          }}
           transition={{
             duration: item.duration,
             delay: item.delay,
@@ -173,6 +189,12 @@ function FloatingIcons() {
         >
           {item.type === "badge" ? (
             <BrandBadge label={item.label} size={item.size} />
+          ) : item.type === "image" ? (
+            <img
+              src={item.src}
+              alt={item.label}
+              style={{ width: item.size, height: item.size }}
+            />
           ) : (
             <item.Icon size={item.size} color={item.color} />
           )}

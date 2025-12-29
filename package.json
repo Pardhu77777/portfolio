@@ -1,0 +1,10 @@
+{
+  "name": "pardhu-portfolio",
+  "private": true,
+  "scripts": {
+    "install:frontend": "npm --prefix app/frontend install",
+    "dev": "npm --prefix app/frontend run dev",
+    "build": "npm --prefix app/frontend run build",
+    "preview": "npm --prefix app/frontend run preview"
+  }
+}

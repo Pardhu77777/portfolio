@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { stats } from "../../data/mockData";
+import { stats } from "../../data/portfolioData";
 import TiltCard from "../ui/TiltCard";
 
 function AboutPreview() {
@@ -11,9 +11,7 @@ function AboutPreview() {
           <span>About Me</span>
         </div>
         <div className="section-line" />
-        <h2 className="section-title mt-4">
-          My <span className="text-gradient">Story</span>
-        </h2>
+        <h2 className="section-title mt-4 text-gradient">My Story</h2>
         <TiltCard className="glass-card card-glow mt-10 p-8">
           <p className="text-base text-slate-300">
             From an early age, I grew up actively involved in church media, where I gained hands-on
@@ -27,9 +25,13 @@ function AboutPreview() {
             bring together multiple independent skills across media production and technology to deliver
             professional, reliable results.
           </p>
+          <p className="mt-4 text-base text-slate-300">
+            Offering multiple professional skill sets with a strong focus on quality, reliability, and
+            consistency.
+          </p>
           <div className="mt-8 flex justify-center">
             <Link className="neon-button" to="/about">
-              Learn More About Me
+              View My Full Journey
             </Link>
           </div>
         </TiltCard>

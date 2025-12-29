@@ -5,18 +5,85 @@ import FloatingIcons from "../components/FloatingIcons";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import TiltCard from "../components/ui/TiltCard";
-import { works, projectDetails } from "../data/mockData";
+import { works, projectDetails } from "../data/portfolioData";
 import { ArrowLeft, ArrowRight, Calendar, Clock, User } from "lucide-react";
 
 function ProjectPage() {
   const { type, id } = useParams();
   const navigate = useNavigate();
 
-  const key = type === "poster" ? "posters" : type === "video" ? "videos" : "websites";
+  const key = type === "poster" ? "posters" : type === "video" ? "videosAll" : "websites";
   const list = works[key] || [];
   const currentIndex = list.findIndex((item) => item.id === id);
   const project = list[currentIndex] || list[0];
   const details = projectDetails[type] || projectDetails.poster;
+  const description = project?.description || details.description;
+
+  const majorHeadings = new Set([
+    "Tech Stack",
+    "Key Features",
+    "Key Features and Architecture",
+    "Key Use Cases",
+    "Why this project matters",
+    "Learner experience",
+    "Admin experience",
+    "Payments + access control",
+    "Payment Service",
+  ]);
+  const minorHeadings = new Set(["Frontend", "Backend", "Infrastructure", "Deployment"]);
+
+  const renderDescription = (text) => {
+    if (!text) {
+      return null;
+    }
+
+    return text.split("\n\n").map((block, index) => {
+      const trimmed = block.trim();
+      if (!trimmed) {
+        return null;
+      }
+
+      if (majorHeadings.has(trimmed)) {
+        return (
+          <h4
+            key={`desc-${index}`}
+            className="mt-6 text-sm uppercase tracking-[0.25em] text-cyan-300"
+          >
+            {trimmed}
+          </h4>
+        );
+      }
+
+      if (minorHeadings.has(trimmed)) {
+        return (
+          <h5 key={`desc-${index}`} className="mt-4 text-base font-semibold text-slate-100">
+            {trimmed}
+          </h5>
+        );
+      }
+
+      const lines = trimmed.split("\n").map((line) => line.trim()).filter(Boolean);
+      if (lines.length > 0 && lines.every((line) => line.startsWith("- "))) {
+        return (
+          <ul key={`desc-${index}`} className="mt-4 list-disc space-y-2 pl-5 text-slate-300">
+            {lines.map((line) => (
+              <li key={line}>{line.slice(2)}</li>
+            ))}
+          </ul>
+        );
+      }
+
+      return (
+        <p
+          key={`desc-${index}`}
+          className="mt-4 text-slate-300 leading-relaxed"
+          style={{ textAlign: "justify" }}
+        >
+          {trimmed}
+        </p>
+      );
+    });
+  };
 
   const prev = list[currentIndex - 1];
   const next = list[currentIndex + 1];
@@ -64,57 +131,25 @@ function ProjectPage() {
             </div>
           </div>
 
-          <div className="mt-10 grid gap-10 lg:grid-cols-[1.6fr_1fr]">
-            <div>
-              <h1 className="text-4xl font-bold">{project?.title || details.title}</h1>
-              <p className="mt-4 text-slate-300">{details.description}</p>
-              <div className="mt-6 glass-card overflow-hidden">
+          <div className="mt-10">
+            <h1 className="text-4xl font-bold">{project?.title || details.title}</h1>
+            <div className="mt-6 glass-card overflow-hidden">
+              {project?.video ? (
+                <video
+                  src={project.video}
+                  className="h-auto w-full bg-black object-contain"
+                  controls
+                  preload="metadata"
+                />
+              ) : (
                 <img
                   src={project?.image}
                   alt={project?.title}
-                  className="h-[420px] w-full object-cover"
+                  className="h-auto w-full object-contain"
                 />
-              </div>
+              )}
             </div>
-            <TiltCard className="glass-card p-6">
-              <h3 className="text-xl font-semibold">Project Details</h3>
-              <div className="mt-6 space-y-4 text-sm text-slate-300">
-                <div className="flex items-center gap-3">
-                  <Calendar className="text-cyan-300" size={18} />
-                  <div>
-                    <p className="text-xs text-slate-400">Year</p>
-                    <p>{details.year}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Clock className="text-purple-300" size={18} />
-                  <div>
-                    <p className="text-xs text-slate-400">Duration</p>
-                    <p>{details.duration}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <User className="text-rose-300" size={18} />
-                  <div>
-                    <p className="text-xs text-slate-400">Client</p>
-                    <p>{details.client}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-slate-500">Tools</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {details.tools.map((tool) => (
-                    <span
-                      key={tool}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs"
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </TiltCard>
+            <div className="mt-6">{renderDescription(description)}</div>
           </div>
 
           {type === "poster" && (
