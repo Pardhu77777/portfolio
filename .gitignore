@@ -12,3 +12,17 @@ videos/
 app/frontend/public/assets/videos_all/
 app/frontend/public/assets/videos_home/
 app/frontend/public/assets/websites/
+# Build output
+dist
+app/frontend/dist
+
+# Videos
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# High-res images
+*.psd
+*.zip
