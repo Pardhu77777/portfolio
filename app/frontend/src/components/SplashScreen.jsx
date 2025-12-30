@@ -10,17 +10,50 @@ const splashIcons = [
   { type: "icon", Icon: Code },
   { type: "icon", Icon: Headphones },
   { type: "icon", Icon: Sparkles },
-  { type: "image", src: "/assets/icons/html.png" },
-  { type: "image", src: "/assets/icons/css.png" },
-  { type: "image", src: "/assets/icons/js.png" },
-  { type: "image", src: "/assets/icons/python.png" },
-  { type: "image", src: "/assets/icons/photoshop.png" },
-  { type: "image", src: "/assets/icons/premiere-pro.png" },
-  { type: "image", src: "/assets/icons/after-effects.png" },
-  { type: "image", src: "/assets/icons/vs-code.png" },
-  { type: "image", src: "/assets/icons/obs.png" },
-  { type: "image", src: "/assets/icons/vmix.png" },
-  { type: "image", src: "/assets/icons/live-stream.png" },
+  {
+    type: "image",
+    src: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/html.png",
+  },
+  {
+    type: "image",
+    src: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/css.png",
+  },
+  {
+    type: "image",
+    src: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/js.png",
+  },
+  {
+    type: "image",
+    src: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/python.png",
+  },
+  {
+    type: "image",
+    src: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/photoshop.png",
+  },
+  {
+    type: "image",
+    src: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/premiere-pro.png",
+  },
+  {
+    type: "image",
+    src: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/after-effects.png",
+  },
+  {
+    type: "image",
+    src: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/vs-code.png",
+  },
+  {
+    type: "image",
+    src: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/obs.png",
+  },
+  {
+    type: "image",
+    src: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/vmix.png",
+  },
+  {
+    type: "image",
+    src: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/live-stream.png",
+  },
 ];
 
 function SplashScreen({ durationMs = 2400 }) {
