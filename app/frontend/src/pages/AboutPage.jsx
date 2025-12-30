@@ -50,7 +50,7 @@ function AboutPage() {
                 <div className="absolute -inset-2 rounded-[32px] bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 opacity-80 blur-sm" />
                 <div className="glass-card card-glow relative h-[340px] w-[340px] overflow-hidden rounded-[28px] border border-white/10 md:h-[380px] md:w-[380px]">
                   <img
-                    src="/assets/about-me.jpg"
+                    src="https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/about-me.jpg"
                     alt="Pardhu portrait"
                     className="h-full w-full object-cover transition duration-300 hover:scale-105"
                   />

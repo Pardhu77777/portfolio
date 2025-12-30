@@ -1,32 +1,32 @@
 ﻿export const roles = [
   {
     title: "Full-Stack Software Developer",
-    image: "/assets/software-developer.png",
+    image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/software-developer.png",
     accent: "#3b82f6",
   },
   {
     title: "Camera Operator",
-    image: "/assets/camera-operator.jpeg",
+    image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/camera-operator.jpeg",
     accent: "#00f0ff",
   },
   {
     title: "Creative Graphic Designer",
-    image: "/assets/graphic-designer-main.jpg",
+    image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/graphic-designer-main.jpg",
     accent: "#a855f7",
   },
   {
     title: "Professional Video Editor",
-    image: "/assets/video-editor-main.jpg",
+    image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/video-editor-main.jpg",
     accent: "#f43f5e",
   },
   {
     title: "Audio & Sound Operator",
-    image: "/assets/sound-operator.jpg",
+    image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/sound-operator.jpg",
     accent: "#f59e0b",
   },
   {
     title: "Live Stream & Broadcast Operator",
-    image: "/assets/live-stream-main.jpg",
+    image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/live-stream-main.jpg",
     accent: "#22c55e",
   },
 ];
