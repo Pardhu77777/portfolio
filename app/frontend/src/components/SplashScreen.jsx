@@ -40,7 +40,7 @@ const splashIcons = [
   },
   {
     type: "image",
-    src: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/vs-code.png",
+    src: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/vs%20code.png",
   },
   {
     type: "image",
@@ -52,7 +52,7 @@ const splashIcons = [
   },
   {
     type: "image",
-    src: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/live-stream.png",
+    src: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/live%20stream.png",
   },
 ];
 

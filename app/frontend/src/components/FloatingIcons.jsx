@@ -62,20 +62,62 @@ function makeImage(src, label) {
 }
 
 const iconSet = [
-  makeImage("/assets/icons/photoshop.png", "Photoshop"),
-  makeImage("/assets/icons/premiere-pro.png", "Premiere Pro"),
-  makeImage("/assets/icons/after-effects.png", "After Effects"),
-  makeImage("/assets/icons/html.png", "HTML"),
-  makeImage("/assets/icons/css.png", "CSS"),
-  makeImage("/assets/icons/js.png", "JavaScript"),
-  makeImage("/assets/icons/python.png", "Python"),
-  makeImage("/assets/icons/java.png", "Java"),
-  makeImage("/assets/icons/vs-code.png", "VS Code"),
-  makeImage("/assets/icons/obs.png", "OBS"),
-  makeImage("/assets/icons/vmix.png", "vMix"),
-  makeImage("/assets/icons/live-stream.png", "Live Stream"),
-  makeImage("/assets/icons/camera.png", "Camera"),
-  makeImage("/assets/icons/mixing-board.png", "Mixing Board"),
+  makeImage(
+    "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/photoshop.png",
+    "Photoshop"
+  ),
+  makeImage(
+    "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/premiere-pro.png",
+    "Premiere Pro"
+  ),
+  makeImage(
+    "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/after-effects.png",
+    "After Effects"
+  ),
+  makeImage(
+    "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/html.png",
+    "HTML"
+  ),
+  makeImage(
+    "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/css.png",
+    "CSS"
+  ),
+  makeImage(
+    "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/js.png",
+    "JavaScript"
+  ),
+  makeImage(
+    "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/python.png",
+    "Python"
+  ),
+  makeImage(
+    "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/java.png",
+    "Java"
+  ),
+  makeImage(
+    "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/vs%20code.png",
+    "VS Code"
+  ),
+  makeImage(
+    "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/obs.png",
+    "OBS"
+  ),
+  makeImage(
+    "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/vmix.png",
+    "vMix"
+  ),
+  makeImage(
+    "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/live%20stream.png",
+    "Live Stream"
+  ),
+  makeImage(
+    "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/camera.png",
+    "Camera"
+  ),
+  makeImage(
+    "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/icons/mixing-board.png",
+    "Mixing Board"
+  ),
   { Icon: Paintbrush, color: "#00f0ff" },
   { Icon: Clapperboard, color: "#a855f7" },
   { Icon: Sparkles, color: "#f43f5e" },
