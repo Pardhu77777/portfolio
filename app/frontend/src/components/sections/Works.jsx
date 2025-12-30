@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { works } from "../../data/portfolioData";
 import TiltCard from "../ui/TiltCard";
@@ -34,6 +34,60 @@ function FeaturedHeader() {
   );
 }
 
+function VideoThumb({ src, className, preload = "auto", previewTime = 0.5 }) {
+  const videoRef = useRef(null);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    if (!videoRef.current) {
+      return;
+    }
+
+    const video = videoRef.current;
+    const handleLoaded = () => {
+      if (Number.isFinite(video.duration) && video.duration > 0) {
+        const target = Math.min(video.duration * previewTime, video.duration - 0.1);
+        if (target > 0) {
+          video.currentTime = target;
+        }
+      }
+    };
+
+    video.addEventListener("loadedmetadata", handleLoaded);
+    const playPromise = videoRef.current.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {});
+    }
+
+    return () => {
+      video.removeEventListener("loadedmetadata", handleLoaded);
+    };
+  }, [src]);
+
+  if (error) {
+    return (
+      <div
+        className={`${className} flex items-center justify-center bg-gradient-to-br from-cyan-500/20 via-slate-900 to-purple-500/20`}
+      />
+    );
+  }
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      className={className}
+      autoPlay
+      loop
+      muted
+      defaultMuted
+      playsInline
+      preload={preload}
+      onError={() => setError(true)}
+    />
+  );
+}
+
 function Card({ item, type, clickable }) {
   const isVideo = Boolean(item.video);
   if (!clickable) {
@@ -41,16 +95,7 @@ function Card({ item, type, clickable }) {
       <TiltCard className="relative overflow-hidden rounded-2xl">
         <div className="relative aspect-[16/10] overflow-hidden bg-black/40">
           {isVideo ? (
-            <video
-              src={item.video}
-              className="h-full w-full object-cover"
-              autoPlay
-              loop
-              muted
-              defaultMuted
-              playsInline
-              preload="metadata"
-            />
+            <VideoThumb src={item.video} className="h-full w-full object-cover" preload="auto" />
           ) : (
             <img
               src={item.image}
@@ -69,16 +114,7 @@ function Card({ item, type, clickable }) {
       <Link to={`/project/${type}/${item.id}`} className="group block">
         <div className="relative aspect-[4/3] overflow-hidden">
           {isVideo ? (
-            <video
-              src={item.video}
-              className="h-full w-full object-cover"
-              autoPlay
-              loop
-              muted
-              defaultMuted
-              playsInline
-              preload="metadata"
-            />
+            <VideoThumb src={item.video} className="h-full w-full object-cover" preload="auto" />
           ) : (
             <img
               src={item.image}
@@ -126,7 +162,7 @@ function SectionSlider({
         loop={loop}
         rewind={rewind}
         initialSlide={initialSlide}
-        speed={800}
+        speed={1100}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
@@ -134,10 +170,10 @@ function SectionSlider({
           stopOnLastSlide: false,
         }}
         coverflowEffect={{
-          rotate: 12,
+          rotate: 9,
           stretch: 0,
-          depth: 120,
-          modifier: 1.1,
+          depth: 110,
+          modifier: 1.05,
           slideShadows: false,
         }}
         className="beeline-slider"

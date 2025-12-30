@@ -10,6 +10,12 @@
 
 # production
 /build
+/dist
+
+# media
+/public/assets/videos_all
+/public/assets/videos_home
+/public/assets/websites
 
 # misc
 .DS_Store

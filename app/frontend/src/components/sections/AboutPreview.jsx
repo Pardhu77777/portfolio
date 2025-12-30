@@ -30,7 +30,7 @@ function AboutPreview() {
             consistency.
           </p>
           <div className="mt-8 flex justify-center">
-            <Link className="neon-button" to="/about">
+            <Link className="neon-button attention pulse" to="/about">
               View My Full Journey
             </Link>
           </div>
