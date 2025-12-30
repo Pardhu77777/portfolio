@@ -80,66 +80,64 @@ function AboutPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <p>
-              My name is Pardhu Mopidevi, and my journey has been shaped by learning, responsibility, and
-              faith rather than formal training alone.
+              My name is Pardhu Mopidevi. My journey is not only about formal education, but also about
+              learning through experience, responsibility, and faith.
             </p>
             <p className="mt-4">
-              From early childhood, church has been a big part of my life. Over time, I became involved in
-              church media work, where I naturally developed practical skills. I first learned how to
-              operate the sound system by observing others and practicing on my own. With guidance from
-              church members and family, I became confident in handling live sound setups, audio mixers,
-              and sound management for regular services and large gospel meetings.
+              From a young age, church has been an important part of my life. Over time, I became involved
+              in church media work and learned many practical skills naturally. I first learned sound
+              system work by watching others and practicing on my own. With help from church members and
+              my family, I became confident in handling live sound, audio mixers, and managing sound for
+              regular services and large gospel meetings.
             </p>
             <p className="mt-4">
-              Alongside sound work, my interest in video editing started very early. During my school
-              days, I began editing videos on my father's phone using simple apps like VideoShow Pro and
-              KineMaster. I did not have any formal knowledge at the time, but through practice, I learned
-              editing basics and visual storytelling. As I grew older, I started editing church-related
-              content and continuously improving my skills through hands-on work.
+              I also developed an interest in video editing at an early age. During my school days, I
+              started editing videos on my father’s phone using simple apps like VideoShow Pro and
+              KineMaster. I had no formal training, but through regular practice, I learned basic editing
+              and storytelling skills. As I grew older, I began editing church videos and kept improving
+              by learning through real work.
             </p>
             <p className="mt-4">
-              As the church had camera equipment, I gradually became involved in camera operation. I
-              learned camera basics, framing, and settings through real usage during church events. Later,
-              when online broadcasting became necessary, I stepped into live streaming. I learned how to
-              set up and manage live streams, monitor outputs, and support online services using available
-              tools and equipment.
+              Since the church had camera equipment, I slowly got involved in camera operation as well. I
+              learned camera basics, framing, and settings by using the cameras during church events.
+              Later, when online services became necessary, I started handling live streaming. I learned
+              how to set up streams, monitor outputs, and support online church services using the
+              available equipment.
             </p>
             <p className="mt-4">
-              Without realizing it, my childhood was shaping me into someone deeply involved in media,
-              production, and live operations.
+              Without realizing it, my childhood experiences prepared me for work in media, production,
+              and live operations.
             </p>
             <p className="mt-4">
-              My interest in software development began during the COVID-19 lockdown. With church
-              activities paused and more time spent at home, I wanted to do something useful for the
-              church. During my second year of diploma, I decided to build a mobile application, even
-              though I had no coding background. I started learning Android development through online
-              videos, understanding basic concepts in Android Studio and Java. My idea was to digitize my
-              church's song book, which contained nearly 1,000 songs.
+              My interest in software development started during the COVID-19 lockdown. With church
+              activities paused and more time at home, I wanted to do something useful. During my second
+              year of diploma, I decided to build a mobile app even though I had no coding experience. I
+              learned Android development through online videos and began understanding basic concepts in
+              Android Studio and Java. My goal was to create a digital version of my church song book,
+              which had nearly 1,000 songs.
             </p>
             <p className="mt-4">
-              Step by step, I learned how to create screens, connect buttons, and structure the
-              application. I manually typed all the songs myself, and it took around seven months to
-              complete the app. When I shared it with people in the church, many appreciated the effort.
-              That experience gave me confidence in learning technology from scratch and solving problems
-              independently.
+              Step by step, I learned how to design screens, connect buttons, and organize the app. I
+              typed all the songs myself, and it took about seven months to finish. When I shared the app
+              with church members, many appreciated it. This experience gave me confidence to learn new
+              technologies on my own and solve problems independently.
             </p>
             <p className="mt-4">
-              After completing my Diploma in Electronics and Communication Engineering, I continued my
-              studies with a B.Tech in the same field. Wanting to grow further in software and computing,
-              I later moved to the UK to pursue an MSc in Computing. Today, alongside my studies, I work
-              part-time as a video editor, camera operator, and live stream operator for an organization,
-              applying the same skills I developed from childhood in a professional environment.
+              After completing my Diploma in Electronics and Communication Engineering, I continued with
+              a B.Tech in the same field. To grow further in software and computing, I later moved to the
+              UK to pursue an MSc in Computing. Along with my studies, I now work part-time as a video
+              editor, camera operator, and live stream operator, using the skills I have developed since
+              childhood in a professional setting.
             </p>
             <p className="mt-4">
-              I do not claim to know everything, and I am honest about my limits. What defines me is my
-              willingness to learn. If I am given a task or project that I do not yet know how to do, I
-              will take the time to understand it and complete it. Learning and finishing what I start is
-              my strongest skill.
+              I do not claim to know everything, and I am honest about my limitations. What defines me
+              is my willingness to learn. If I am given a task that I do not know how to do, I will take
+              the time to learn and complete it. Learning and finishing what I start is my strongest
+              quality.
             </p>
             <p className="mt-4">
-              Everything I have achieved so far, I believe, is by the grace of God. I am still learning,
-              still growing, and always ready to take on new challenges, whether in a full-time role or
-              meaningful freelance work.
+              I am still learning, still growing, and always ready to take on new challenges, whether in
+              a full-time role or meaningful freelance work.
             </p>
           </motion.div>
         </div>
@@ -311,7 +309,7 @@ function AboutPage() {
             {tools.map((tool) => (
               <span
                 key={tool}
-                className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm"
+                className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:border-cyan-300/60 hover:text-cyan-100 hover:shadow-[0_8px_24px_rgba(0,240,255,0.2)]"
               >
                 {tool}
               </span>

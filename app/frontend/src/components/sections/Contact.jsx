@@ -65,13 +65,13 @@ function Contact() {
             </div>
           </div>
           <motion.form
-            className="glass-card p-8 space-y-4"
+            className="glass-card p-6 md:p-8 space-y-3"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             onSubmit={handleSubmit}
           >
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-3 md:grid-cols-2">
               <div>
                 <label className="text-sm text-slate-400">Your Name</label>
                 <input
@@ -102,7 +102,7 @@ function Contact() {
               <label className="text-sm text-slate-400">Message</label>
               <textarea
                 name="message"
-                rows="5"
+                rows="4"
                 className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3"
                 placeholder="Tell me about your project..."
               />

@@ -37,52 +37,93 @@ function ProjectPage() {
       return null;
     }
 
-    return text.split("\n\n").map((block, index) => {
-      const trimmed = block.trim();
-      if (!trimmed) {
-        return null;
+    const blocks = text.split("\n\n").map((block) => block.trim()).filter(Boolean);
+    const elements = [];
+    let inTechStack = false;
+    let pendingTechStackGroup = null;
+
+    const flushTechStackGroup = () => {
+      if (!pendingTechStackGroup || pendingTechStackGroup.items.length === 0) {
+        pendingTechStackGroup = null;
+        return;
       }
 
-      if (majorHeadings.has(trimmed)) {
-        return (
+      const items = pendingTechStackGroup.items;
+      elements.push(
+        <ul
+          key={`techstack-${pendingTechStackGroup.heading}`}
+          className="mt-3 grid gap-2 text-slate-300 sm:grid-cols-2"
+        >
+          {items.map((item) => (
+            <li key={item} className="flex items-start gap-2">
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-cyan-300/80" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      );
+      pendingTechStackGroup = null;
+    };
+
+    blocks.forEach((block, index) => {
+      if (majorHeadings.has(block)) {
+        flushTechStackGroup();
+        inTechStack = block === "Tech Stack";
+        elements.push(
           <h4
             key={`desc-${index}`}
             className="mt-6 text-sm uppercase tracking-[0.25em] text-cyan-300"
           >
-            {trimmed}
+            {block}
           </h4>
         );
+        return;
       }
 
-      if (minorHeadings.has(trimmed)) {
-        return (
+      if (minorHeadings.has(block)) {
+        flushTechStackGroup();
+        if (inTechStack) {
+          pendingTechStackGroup = { heading: block, items: [] };
+        }
+        elements.push(
           <h5 key={`desc-${index}`} className="mt-4 text-base font-semibold text-slate-100">
-            {trimmed}
+            {block}
           </h5>
         );
+        return;
       }
 
-      const lines = trimmed.split("\n").map((line) => line.trim()).filter(Boolean);
+      const lines = block.split("\n").map((line) => line.trim()).filter(Boolean);
+      if (inTechStack && pendingTechStackGroup) {
+        const cleaned = lines.map((line) => (line.startsWith("- ") ? line.slice(2) : line));
+        pendingTechStackGroup.items.push(...cleaned);
+        return;
+      }
+
       if (lines.length > 0 && lines.every((line) => line.startsWith("- "))) {
-        return (
+        elements.push(
           <ul key={`desc-${index}`} className="mt-4 list-disc space-y-2 pl-5 text-slate-300">
             {lines.map((line) => (
               <li key={line}>{line.slice(2)}</li>
             ))}
           </ul>
         );
+        return;
       }
 
-      return (
+      elements.push(
         <p
           key={`desc-${index}`}
           className="mt-4 text-slate-300 leading-relaxed"
           style={{ textAlign: "justify" }}
         >
-          {trimmed}
+          {block}
         </p>
       );
     });
+
+    flushTechStackGroup();
+    return elements;
   };
 
   const prev = list[currentIndex - 1];
