@@ -148,6 +148,18 @@ export const works = {
     image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_home/worship_night_thumb.jpg",
     year: "",
   },
+  {
+    id: "poster-home-7",
+    title: "3rd post",
+    image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_home/3rd%20post.png",
+    year: "",
+  },
+  {
+    id: "poster-home-8",
+    title: "image1",
+    image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_home/image1.png",
+    year: "",
+  },
 ],
   posters: [
     {
@@ -292,6 +304,18 @@ export const works = {
       id: "poster-24",
       title: "worship_night_thumb",
       image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_all/posters_landscape/worship_night_thumb.jpg",
+      year: "",
+    },
+    {
+      id: "poster-51",
+      title: "3rd post",
+      image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_home/3rd%20post.png",
+      year: "",
+    },
+    {
+      id: "poster-52",
+      title: "image1",
+      image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_home/image1.png",
       year: "",
     },
     {
@@ -489,6 +513,12 @@ export const works = {
       video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_home/lcct_promise.mp4",
       year: "",
     },
+    {
+      id: "video-home-7",
+      title: "New Year Go Green",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_home/New_Year_GOGreen_Noaudio.mp4",
+      year: "",
+    },
   ],
   videosAll: [
     {
@@ -555,6 +585,12 @@ export const works = {
       id: "video-11",
       title: "New Year Worship",
       video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/newyearw.mp4",
+      year: "",
+    },
+    {
+      id: "video-11b",
+      title: "New Year Go Green",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_home/New_Year_GOGreen_Noaudio.mp4",
       year: "",
     },
     {
