@@ -19,6 +19,10 @@ function App() {
     return () => document.removeEventListener("contextmenu", handleContextMenu);
   }, []);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [location.pathname]);
+
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>

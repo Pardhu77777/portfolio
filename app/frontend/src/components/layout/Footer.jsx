@@ -1,10 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowUp, Github, Instagram, Linkedin, Youtube } from "lucide-react";
+import { ArrowUp, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/pardhu-mopidevi", Icon: Linkedin },
-  { label: "GitHub", href: "https://github.com/Pardhu77777", Icon: Github },
   { label: "Instagram", href: "https://www.instagram.com/pardhu.77", Icon: Instagram },
   { label: "YouTube", href: "https://www.youtube.com/@7PMJourney", Icon: Youtube },
 ];

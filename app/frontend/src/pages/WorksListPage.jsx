@@ -89,6 +89,16 @@ function WorksListPage() {
                       className="h-auto w-full"
                       controls
                       preload="metadata"
+                      onMouseEnter={(event) => {
+                        const video = event.currentTarget;
+                        const playPromise = video.play();
+                        if (playPromise && typeof playPromise.catch === "function") {
+                          playPromise.catch(() => {});
+                        }
+                      }}
+                      onMouseLeave={(event) => {
+                        event.currentTarget.pause();
+                      }}
                     />
                   </div>
                 ) : (
@@ -98,11 +108,20 @@ function WorksListPage() {
                         <video
                           src={item.video}
                           className="h-auto w-full transition duration-300 group-hover:scale-[1.02]"
-                          autoPlay
                           loop
                           muted
                           playsInline
                           preload="metadata"
+                          onMouseEnter={(event) => {
+                            const video = event.currentTarget;
+                            const playPromise = video.play();
+                            if (playPromise && typeof playPromise.catch === "function") {
+                              playPromise.catch(() => {});
+                            }
+                          }}
+                          onMouseLeave={(event) => {
+                            event.currentTarget.pause();
+                          }}
                         />
                       ) : (
                         <img
@@ -112,8 +131,8 @@ function WorksListPage() {
                           loading="lazy"
                         />
                       )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
-                      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-sm opacity-0 transition duration-300 group-hover:opacity-100">
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+                      <div className="pointer-events-none absolute bottom-4 left-4 right-4 flex items-center justify-between text-sm opacity-0 transition duration-300 group-hover:opacity-100">
                         <span>{item.title}</span>
                         <ArrowRight size={16} />
                       </div>
