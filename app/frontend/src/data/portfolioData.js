@@ -513,12 +513,6 @@ export const works = {
       video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_home/lcct_promise.mp4",
       year: "",
     },
-    {
-      id: "video-home-7",
-      title: "New Year Go Green",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_home/New_Year_GOGreen_Noaudio.mp4",
-      year: "",
-    },
   ],
   videosAll: [
     {
@@ -588,12 +582,6 @@ export const works = {
       year: "",
     },
     {
-      id: "video-11b",
-      title: "New Year Go Green",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_home/New_Year_GOGreen_Noaudio.mp4",
-      year: "",
-    },
-    {
       id: "video-12",
       title: "Oxford",
       video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/oxford.mp4",
@@ -603,12 +591,6 @@ export const works = {
       id: "video-13",
       title: "Telugu Version",
       video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/telugu%20ver.mp4",
-      year: "",
-    },
-    {
-      id: "video-14",
-      title: "Wedding Invitation",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/wedding%20invitation.mp4",
       year: "",
     },
   ],
