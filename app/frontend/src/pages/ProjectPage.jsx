@@ -6,7 +6,7 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import TiltCard from "../components/ui/TiltCard";
 import { works, projectDetails } from "../data/portfolioData";
-import { ArrowLeft, ArrowRight, Calendar, Clock, User } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 
 function ProjectPage() {
   const { type, id } = useParams();
@@ -174,6 +174,18 @@ function ProjectPage() {
 
           <div className="mt-10">
             <h1 className="text-4xl font-bold">{project?.title || details.title}</h1>
+            {project?.liveUrl ? (
+              <div className="mt-4">
+                <a
+                  className="neon-button inline-flex"
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit Live Website <ExternalLink size={16} />
+                </a>
+              </div>
+            ) : null}
             <div className="mt-6 glass-card overflow-hidden">
               {project?.video ? (
                 <video
