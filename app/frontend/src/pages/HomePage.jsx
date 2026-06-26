@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import FloatingIcons from "../components/FloatingIcons";
+import ParticleField from "../components/ParticleField";
+import CursorGlow from "../components/CursorGlow";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Hero from "../components/sections/Hero";
@@ -28,6 +30,8 @@ function HomePage() {
       transition={{ duration: 0.7, ease: "easeInOut" }}
     >
       <AnimatePresence>{showSplash && <SplashScreen />}</AnimatePresence>
+      <ParticleField />
+      <CursorGlow />
       <FloatingIcons />
       <Header />
       <Hero />

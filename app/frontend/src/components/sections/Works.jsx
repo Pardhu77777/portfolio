@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { works } from "../../data/portfolioData";
 import TiltCard from "../ui/TiltCard";
@@ -25,11 +26,34 @@ function SectionHeader({ title, subtitle, action, titleClassName = "" }) {
 function FeaturedHeader() {
   return (
     <div className="text-center">
-      <h2 className="section-title text-gradient">Featured Works</h2>
+      <motion.div
+        className="neon-outline inline-flex mb-4"
+        initial={{ opacity: 0, scale: 0.85 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <span>Portfolio</span>
+      </motion.div>
+      <motion.h2
+        className="section-title text-gradient section-title-glow"
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.65, delay: 0.1 }}
+      >
+        Featured Works
+      </motion.h2>
       <div className="section-line" />
-      <p className="section-subtitle">
+      <motion.p
+        className="section-subtitle"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         Curated creative projects across web and visual design.
-      </p>
+      </motion.p>
     </div>
   );
 }
@@ -92,7 +116,7 @@ function Card({ item, type, clickable }) {
   const isVideo = Boolean(item.video);
   if (!clickable) {
     return (
-      <TiltCard className="relative overflow-hidden rounded-2xl">
+      <TiltCard className="relative overflow-hidden rounded-2xl border border-white/[0.06] transition-all duration-300 hover:border-cyan-400/25">
         <div className="relative aspect-[16/10] overflow-hidden bg-black/40">
           {isVideo ? (
             <VideoThumb src={item.video} className="h-full w-full object-cover" preload="auto" />
@@ -100,17 +124,20 @@ function Card({ item, type, clickable }) {
             <img
               src={item.image}
               alt={item.title || "Poster"}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover transition duration-500 hover:scale-105"
               loading="lazy"
             />
           )}
+          {/* Hover glow overlay */}
+          <div className="absolute inset-0 opacity-0 transition duration-400 hover:opacity-100"
+            style={{ background: "linear-gradient(135deg, rgba(0,240,255,0.06), rgba(168,85,247,0.06))" }} />
         </div>
       </TiltCard>
     );
   }
 
   return (
-    <TiltCard className="relative overflow-hidden rounded-2xl">
+    <TiltCard className="relative overflow-hidden rounded-2xl border border-white/[0.06] transition-all duration-300 hover:border-cyan-400/30">
       <Link to={`/project/${type}/${item.id}`} className="group block">
         <div className="relative aspect-[4/3] overflow-hidden">
           {isVideo ? (
@@ -119,11 +146,14 @@ function Card({ item, type, clickable }) {
             <img
               src={item.image}
               alt={item.title || "Project"}
-              className="h-full w-full object-cover transition duration-300 group-hover:scale-110"
+              className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
               loading="lazy"
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+          {/* Gradient overlay on hover */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+          {/* Neon top-edge on hover */}
+          <div className="absolute left-0 right-0 top-0 h-px scale-x-0 bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent transition-transform duration-400 group-hover:scale-x-100" />
           <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-sm opacity-0 transition duration-300 group-hover:opacity-100">
             <span>{item.title}</span>
             <ArrowRight size={16} />
@@ -131,9 +161,13 @@ function Card({ item, type, clickable }) {
         </div>
         {type === "video" && (
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="rounded-full bg-black/60 p-3">
+            <motion.div
+              className="rounded-full bg-black/60 p-3 border border-cyan-400/20"
+              whileHover={{ scale: 1.15, borderColor: "rgba(0,240,255,0.6)" }}
+              style={{ boxShadow: "0 0 20px rgba(0,240,255,0.15)" }}
+            >
               <Play size={20} className="text-cyan-300" />
-            </div>
+            </motion.div>
           </div>
         )}
       </Link>

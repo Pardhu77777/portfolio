@@ -218,6 +218,32 @@ function FloatingIcons() {
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      {/* Animated ambient background orbs */}
+      <motion.div
+        className="absolute left-[8%] top-[4%] h-[700px] w-[700px] rounded-full"
+        style={{ background: "radial-gradient(circle, rgba(0,240,255,0.065), transparent 65%)" }}
+        animate={{ x: [0, 60, 0], y: [0, -45, 0], scale: [1, 1.15, 1] }}
+        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute right-[4%] top-[8%] h-[580px] w-[580px] rounded-full"
+        style={{ background: "radial-gradient(circle, rgba(168,85,247,0.08), transparent 65%)" }}
+        animate={{ x: [0, -50, 0], y: [0, 40, 0], scale: [1, 1.1, 1] }}
+        transition={{ duration: 28, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+      />
+      <motion.div
+        className="absolute left-[38%] bottom-[8%] h-[500px] w-[500px] rounded-full"
+        style={{ background: "radial-gradient(circle, rgba(244,63,94,0.055), transparent 65%)" }}
+        animate={{ x: [0, 40, 0], y: [0, -30, 0], scale: [1, 1.08, 1] }}
+        transition={{ duration: 25, repeat: Infinity, ease: "easeInOut", delay: 6 }}
+      />
+      <motion.div
+        className="absolute left-[55%] top-[40%] h-[380px] w-[380px] rounded-full"
+        style={{ background: "radial-gradient(circle, rgba(59,130,246,0.05), transparent 65%)" }}
+        animate={{ x: [0, -35, 0], y: [0, 30, 0], scale: [1, 1.12, 1] }}
+        transition={{ duration: 32, repeat: Infinity, ease: "easeInOut", delay: 9 }}
+      />
+
       {icons.map((item) => (
         <motion.div
           key={item.id}
