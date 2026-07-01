@@ -24,13 +24,14 @@ function ProjectPage() {
     "Key Features",
     "Key Features and Architecture",
     "Key Use Cases",
+    "Key Responsibilities",
     "Why this project matters",
     "Learner experience",
     "Admin experience",
     "Payments + access control",
     "Payment Service",
   ]);
-  const minorHeadings = new Set(["Frontend", "Backend", "Infrastructure", "Deployment"]);
+  const minorHeadings = new Set(["Frontend", "Backend", "Database", "Payments", "Email", "Security", "Infrastructure", "Deployment"]);
 
   const renderDescription = (text) => {
     if (!text) {
