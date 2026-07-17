@@ -85,8 +85,8 @@ function Hero() {
   const roleGlow = role.accent || "#a855f7";
 
   return (
-    <section className="section" ref={sectionRef} id="home">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr]">
+    <section className="section-hero" ref={sectionRef} id="home">
+      <div className="mx-auto w-full grid max-w-6xl items-center gap-8 px-4 sm:px-6 lg:gap-12 lg:grid-cols-2 xl:max-w-7xl 2xl:max-w-[1400px]">
 
         {/* ── Left Column ─────────────────────────────── */}
         <div>
@@ -100,7 +100,7 @@ function Hero() {
           </motion.p>
 
           <motion.h1
-            className="mt-4 text-5xl font-bold leading-[1.1] tracking-tight md:text-7xl"
+            className="mt-4 font-bold leading-[1.1] tracking-tight" style={{ fontSize: "clamp(2rem, 4.5vw, 4.25rem)" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
@@ -109,7 +109,7 @@ function Hero() {
           </motion.h1>
 
           <motion.div
-            className="mt-6 flex items-center gap-3 text-2xl font-semibold"
+            className="mt-5 flex items-center gap-3 font-semibold" style={{ fontSize: "clamp(1.1rem, 2vw, 1.6rem)" }}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -124,7 +124,7 @@ function Hero() {
           </motion.div>
 
           <motion.p
-            className="mt-5 max-w-xl text-[15px] leading-relaxed text-slate-400"
+            className="mt-5 max-w-lg text-[15px] leading-relaxed text-slate-400 xl:text-[16px]"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -346,7 +346,7 @@ function Hero() {
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={role.image}
-                    className="scanlines h-[380px] w-full md:h-[440px]"
+                    className="scanlines h-[260px] w-full sm:h-[340px] md:h-[460px] lg:h-[520px] xl:h-[600px] 2xl:h-[660px]"
                     initial={{ scale: 0.95, opacity: 0, filter: "blur(8px)" }}
                     animate={{ scale: 1,    opacity: 1, filter: "blur(0px)" }}
                     exit={  { scale: 0.98, opacity: 0, filter: "blur(4px)" }}
@@ -365,12 +365,12 @@ function Hero() {
 
           {/* Floating badges */}
           <FloatingBadge
-            className="right-[-14px] top-[16%]"
+            className="hidden sm:flex right-[-14px] top-[16%]"
             icon={<Sparkles size={15} className="text-amber-200" />}
             glow="rgba(251,191,36,0.45)"
           />
           <FloatingBadge
-            className="bottom-[10%] left-[-14px]"
+            className="hidden sm:flex bottom-[10%] left-[-14px]"
             icon={<Clapperboard size={15} className="text-violet-200" />}
             glow="rgba(167,139,250,0.45)"
           />
@@ -394,7 +394,7 @@ function Hero() {
 function FloatingBadge({ className, icon, glow }) {
   return (
     <motion.div
-      className={`absolute ${className} z-10`}
+      className={`absolute ${className} z-10 items-center justify-center`}
       animate={{ y: [0, -10, 0] }}
       transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
     >

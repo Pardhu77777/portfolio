@@ -7,7 +7,7 @@ import TiltCard from "../ui/TiltCard";
 function AboutPreview() {
   return (
     <section id="about" className="section">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 xl:max-w-7xl">
         {/* Section header — centered */}
         <div className="text-center">
           <motion.div

@@ -16,7 +16,7 @@ function Footer() {
       {/* Ambient glow */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-purple-500/[0.03] to-transparent" />
 
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 xl:max-w-7xl">
         <div className="flex flex-col items-center gap-6 md:flex-row md:items-center md:justify-between">
           {/* Socials */}
           <div className="flex items-center gap-3">

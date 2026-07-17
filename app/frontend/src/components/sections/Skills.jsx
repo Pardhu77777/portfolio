@@ -98,7 +98,7 @@ function SkillCard({ skill, index }) {
 function Skills() {
   return (
     <section id="skills" className="section dot-grid section-dark">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 xl:max-w-7xl">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <h2 className="section-title section-title-glow text-gradient">Skills & Expertise</h2>

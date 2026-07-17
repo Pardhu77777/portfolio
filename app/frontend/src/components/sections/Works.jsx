@@ -230,7 +230,7 @@ function SectionSlider({
 function Works() {
   return (
     <section id="works" className="section">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 xl:max-w-7xl">
         <FeaturedHeader />
 
         <SectionHeader

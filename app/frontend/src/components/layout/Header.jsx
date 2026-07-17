@@ -67,7 +67,7 @@ function Header() {
           <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent pointer-events-none" />
         )}
 
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 xl:max-w-7xl">
           {/* Logo */}
           <Link to="/" className="group">
             <span className="text-sm font-bold tracking-tight md:text-base">

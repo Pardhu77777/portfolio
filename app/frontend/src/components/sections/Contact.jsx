@@ -53,7 +53,7 @@ function Contact() {
 
   return (
     <section id="contact" className="section">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 xl:max-w-7xl">
         <div className="text-center">
           <motion.div
             className="neon-outline inline-flex"
