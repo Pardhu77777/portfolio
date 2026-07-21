@@ -522,6 +522,18 @@ export const works = {
       year: "",
     },
     {
+      id: "video-n01",
+      title: "People's Thoughts",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/PEOPLE'S_THOUGHTS_SOCIAL_MEDIA.mp4",
+      year: "",
+    },
+    {
+      id: "video-n02",
+      title: "Social Media Highlights",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/260719_SOCIAL_MEDIA_LOW_QUALITY.mp4",
+      year: "",
+    },
+    {
       id: "video-n1",
       title: "Wednesday Highlights",
       video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/260617_WEDNESDAY_HIGHLIGHTS_SOCIAL_MEDIA.mp4",
