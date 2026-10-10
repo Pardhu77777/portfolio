@@ -40,11 +40,25 @@ app/frontend/public/assets/websites/
 *.tar.gz
 *.rar
 
-# Office/spec docs
+# Office/spec docs and notes (not used by the website)
+*.doc
 *.docx
+*.xls
 *.xlsx
+*.ppt
 *.pptx
 *.pdf
+*.rtf
+*.odt
+*.csv
+*.txt
+*.md
+~$*
+
+# Files the website or repo still needs
+!app/frontend/public/robots.txt
+!README.md
+!app/frontend/README.md
 
 # Claude Code session data
 .claude/

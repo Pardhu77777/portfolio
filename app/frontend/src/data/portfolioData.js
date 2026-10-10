@@ -2,32 +2,32 @@
   {
     title: "Full-Stack Software Developer",
     image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/software-developer.png",
-    accent: "#3b82f6",
+    accent: "#2563eb",
   },
   {
     title: "Camera Operator",
     image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/camera-operator.jpeg",
-    accent: "#00f0ff",
+    accent: "#0284c7",
   },
   {
     title: "Creative Graphic Designer",
     image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/graphic-designer-main.jpg",
-    accent: "#a855f7",
+    accent: "#1d4ed8",
   },
   {
     title: "Professional Video Editor",
     image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/video-editor-main.jpg",
-    accent: "#f43f5e",
+    accent: "#2563eb",
   },
   {
     title: "Audio & Sound Operator",
     image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/sound-operator.jpg",
-    accent: "#f59e0b",
+    accent: "#0284c7",
   },
   {
     title: "Live Stream & Broadcast Operator",
     image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/live-stream-main.jpg",
-    accent: "#22c55e",
+    accent: "#1e40af",
   },
 ];
 export const stats = [
@@ -704,72 +704,966 @@ export const works = {
   ],
   websites: [
     {
-      id: "website-vyg",
-      title: "VYG UK: Full-Stack Web Platform",
-      image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/websites/VYG_homescreen.png",
-      liveUrl: "https://victoryyouthgroup.org/",
-      year: "",
-      description:
-        "Developed and deployed a production-ready full-stack web platform for VYG UK, providing a secure administrative portal alongside a responsive public website. The platform enables efficient management of organisational content, including events, testimonies, branches, projects, media, and donations, through a centralised admin dashboard.\n\nThe foundation of the build was a role-based authentication and authorisation system using JWT with OTP email verification, ensuring secure access for administrators. Complete CRUD functionality was built for all core modules, allowing administrators to create, update, manage, and publish content efficiently.\n\nA comprehensive audit logging system was designed and implemented to record all administrative activity, including user authentication, content modifications, media uploads, and system actions. The module includes IP address tracking, advanced filtering by action, entity, and date, pagination, and CSV export for reporting and compliance purposes.\n\nPayPal REST API v2 was integrated with secure server-side order creation and payment capture, supporting both Sandbox and Live environments for reliable donation processing. Secure file upload for images and videos was implemented using Multer with Docker-managed persistent storage.\n\nThe public-facing website was built with responsive design, Google Maps integration, Google reCAPTCHA protection, and optimised performance across desktop and mobile devices.\n\nTech Stack\n\nFrontend\n\nReact 19\nJavaScript\nHTML5\nCSS3\n\nBackend\n\nNode.js\nExpress.js\n\nDatabase\n\nPostgreSQL\n\nSecurity\n\nbcryptjs\nGoogle reCAPTCHA\n\nPayments\n\nPayPal REST API v2\n\nEmail\n\nNodemailer\n\nDeployment\n\nDocker\nDocker Compose\nNginx\n\nKey Responsibilities\n\n- Designed and developed the complete full-stack application from scratch\n- Built a secure role-based authentication and authorisation system using JWT and OTP email verification\n- Developed RESTful APIs with Express.js following scalable backend architecture\n- Implemented complete CRUD operations for events, testimonies, branches, projects, radio content, and site media\n- Integrated PayPal REST API for secure online donation processing\n- Built a comprehensive administrative audit logging system with advanced filtering, IP tracking, and CSV export\n- Developed secure image and video upload functionality using Multer\n- Optimised PostgreSQL database operations using raw SQL queries and connection pooling\n- Implemented email services using Nodemailer for OTP verification and notifications\n- Created a responsive React-based frontend with modern UI and client-side routing\n- Deployed the application using Docker, Docker Compose, Nginx, and SSL certificates\n- Applied security best practices including bcrypt, JWT, Content Security Policy, and Google reCAPTCHA\n\nWhy this project matters\n\nThis platform demonstrates my ability to design and deliver a complete production system, from secure authentication and payment integration to audit logging and media management, meeting real organisational requirements in a reliable, maintainable way.",
+      id: "website-6",
+      title: "ROD Case Management Platform",
+      summary: "Secure role-based case management and communication platform for a prison support ministry, with a separate family portal.",
+      tags: [
+        "Next.js 14",
+        "TypeScript",
+        "Express",
+        "PostgreSQL",
+        "Prisma",
+        "Docker",
+        "Nginx"
+      ],
+      tagline: "A secure platform helping a church outreach team support people in prison and keep their families informed.",
+      role: "Full-stack developer (sole developer)",
+      stack: [
+        {
+          "label": "Frontend",
+          "items": [
+            "TypeScript",
+            "Next.js 14 (App Router)",
+            "React 18"
+          ]
+        },
+        {
+          "label": "Backend",
+          "items": [
+            "TypeScript",
+            "Node.js 20",
+            "Express"
+          ]
+        },
+        {
+          "label": "Databases",
+          "items": [
+            "PostgreSQL 15"
+          ]
+        },
+        {
+          "label": "UI & Styling",
+          "items": [
+            "CSS Modules"
+          ]
+        },
+        {
+          "label": "Libraries and Drivers",
+          "items": [
+            "Prisma ORM",
+            "Zod",
+            "Argon2",
+            "Nodemailer",
+            "Sharp"
+          ]
+        },
+        {
+          "label": "Testing",
+          "items": [
+            "Vitest",
+            "Supertest"
+          ]
+        },
+        {
+          "label": "DevOps",
+          "items": [
+            "Docker Compose",
+            "Nginx"
+          ]
+        }
+      ],
+      image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/websites/Rod.png",
+      liveUrl: "https://rod.uckg.org/",
+      sections: [
+        {
+          "heading": "Overview",
+          "paragraphs": [
+            "Rescue of Dignity (ROD) is a church group that supports people in prison and their families. Families ask the team for help, such as arranging visits from church members, and the team needs a reliable way to record requests, follow each case and report back. I designed and built a single secure system: staff record and track every case, and families log in to see progress on their loved one's case."
+          ]
+        },
+        {
+          "heading": "What the platform does",
+          "items": [
+            {
+              "label": "Case management",
+              "text": "create cases, assign team members, post updates with attachments, change status and close cases once support is delivered. Sensitive actions go through an approval workflow."
+            },
+            {
+              "label": "Custom forms",
+              "text": "admins build their own forms (sections, fields, types) without code. Every account holder fills in details through these forms and all submissions are tracked."
+            },
+            {
+              "label": "Family portal",
+              "text": "family members log in with a one-time email code to view their case, read updates and download shared files."
+            },
+            {
+              "label": "Roles and permissions",
+              "text": "Admin, Manager and Support roles, plus per-user permission grants."
+            },
+            {
+              "label": "Reporting",
+              "text": "dashboard, case reports with CSV export, and a full exportable audit log of every action."
+            },
+            {
+              "label": "User management",
+              "text": "invite staff by email, restrict sign-ups to approved email domains, manage account status and active sessions."
+            }
+          ]
+        },
+        {
+          "heading": "Technical highlights",
+          "items": [
+            {
+              "label": "Security-first authentication",
+              "text": "Argon2id hashing, email OTP two-factor login, trusted devices, login lockout, forced password changes with a password policy, and access/refresh token rotation in httpOnly cookies."
+            },
+            {
+              "label": "Session control",
+              "text": "users and admins can view and revoke active sessions across devices."
+            },
+            {
+              "label": "Request protection",
+              "text": "CSRF double-submit tokens, Origin/Referer allowlist, Helmet headers (CSP, HSTS) and rate limiting in the app and Nginx."
+            },
+            {
+              "label": "Safe file handling",
+              "text": "uploads validated by magic bytes, stored with random filenames; profile photos processed with Sharp."
+            },
+            {
+              "label": "Clean architecture",
+              "text": "layered backend (routes → controllers → services → Prisma), Zod validation on client and server, 20 data models across 15 migrations."
+            },
+            {
+              "label": "Tested and linted",
+              "text": "Vitest and Supertest suite, ESLint, TypeScript end to end."
+            },
+            {
+              "label": "Production deployment",
+              "text": "four Docker services behind Nginx, PostgreSQL with enforced TLS, automatic migrations on start, health-check endpoint."
+            },
+            {
+              "label": "Polished UI",
+              "text": "in-house component library (modals, tabs, tables, toasts, skeleton loaders) with light and dark themes."
+            }
+          ]
+        }
+      ],
+    },
+    {
+      id: "website-intellimen",
+      title: "Intellimen Football League Platform",
+      summary: "Real-time football league platform with live scores over WebSockets, a referee match-day console and role-based portals for admins, referees and players.",
+      tags: [
+        "Next.js 16",
+        "TypeScript",
+        "Socket.io",
+        "Express",
+        "PostgreSQL",
+        "Prisma",
+        "Three.js",
+        "GSAP"
+      ],
+      tagline: "A live league management platform for a church football league, with real-time scores pushed straight from the pitch.",
+      role: "Full-stack developer (sole developer)",
+      stack: [
+        {
+          "label": "Frontend",
+          "items": [
+            "TypeScript",
+            "Next.js 16 (App Router)",
+            "React 19"
+          ]
+        },
+        {
+          "label": "Backend",
+          "items": [
+            "TypeScript",
+            "Node.js",
+            "Express"
+          ]
+        },
+        {
+          "label": "Databases",
+          "items": [
+            "PostgreSQL"
+          ]
+        },
+        {
+          "label": "UI & Styling",
+          "items": [
+            "Tailwind CSS 4",
+            "Framer Motion",
+            "GSAP",
+            "Three.js (React Three Fiber)"
+          ]
+        },
+        {
+          "label": "Libraries and Drivers",
+          "items": [
+            "Socket.io",
+            "Prisma ORM",
+            "Zod",
+            "Sharp",
+            "Nodemailer"
+          ]
+        },
+        {
+          "label": "DevOps",
+          "items": [
+            "Docker Compose",
+            "Nginx"
+          ]
+        }
+      ],
+      liveUrl: "https://intellimenfootball.co.uk/",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/websites/football_demo.mp4",
+      sections: [
+        {
+          "heading": "Overview",
+          "paragraphs": [
+            "The church football league needed one place for fans, players and officials: live scores, fixtures, results, league tables and media, plus tools to run the league itself. I built a public website and four role-based portals. Referees update matches live from their phones, and every goal, card and result appears on the public site instantly, with no page refresh."
+          ]
+        },
+        {
+          "heading": "Public website",
+          "items": [
+            {
+              "text": "Live scores, fixtures, results, auto-calculated league table, player stats, teams, highlight videos and photo gallery."
+            },
+            {
+              "text": "Match detail view with goals, cards and man of the match."
+            },
+            {
+              "text": "Animated design with a 3D football hero, scroll animations and smooth transitions."
+            },
+            {
+              "text": "SEO basics: generated sitemap, robots.txt and dynamic page titles."
+            }
+          ]
+        },
+        {
+          "heading": "Role-based portals",
+          "items": [
+            {
+              "label": "Admin",
+              "text": "create leagues, teams and fixtures; upload gallery photos and highlight videos; edit site text; edit results and scores; full control of the public site."
+            },
+            {
+              "label": "Head referee",
+              "text": "assign referees to specific fixtures and correct results and scores."
+            },
+            {
+              "label": "Referee",
+              "text": "view assigned fixtures and run the Match Day live control screen: match timer and time remaining, goals, yellow and red cards per player, and man of the match. Every action is pushed to the public site in real time."
+            },
+            {
+              "label": "Player",
+              "text": "register, log in, see team fixtures and results, and appear on the team's public squad page with an avatar."
+            }
+          ]
+        },
+        {
+          "heading": "Technical highlights",
+          "items": [
+            {
+              "label": "Real-time updates",
+              "text": "Socket.io broadcasts every live match event from referee to public site with no polling."
+            },
+            {
+              "label": "League logic",
+              "text": "league table calculated automatically from fixture results."
+            },
+            {
+              "label": "Secure auth",
+              "text": "JWT access and refresh tokens in httpOnly cookies, bcrypt hashing, email OTP, trusted devices and role-based route protection on frontend and backend."
+            },
+            {
+              "label": "Smart media pipeline",
+              "text": "Sharp resizes and compresses uploads; team logo backgrounds are removed automatically; players crop avatars in the browser."
+            },
+            {
+              "label": "Protection",
+              "text": "Helmet headers, per-user rate limiting and Zod request validation."
+            },
+            {
+              "label": "Front-end craft",
+              "text": "Three.js 3D hero ball, GSAP scroll timelines, Framer Motion transitions and a custom ball-tracking visual."
+            },
+            {
+              "label": "Clean API design",
+              "text": "Express routes split by audience (public, admin, referee, player) with typed Prisma access."
+            },
+            {
+              "label": "Deployment",
+              "text": "four Docker services (PostgreSQL, Express + Socket.io, Next.js standalone, Nginx) with separate dev and production setups."
+            }
+          ]
+        }
+      ],
     },
     {
       id: "website-2",
-      title: "Marriage Course Platform",
+      title: "UCKG Marriage Course Platform",
+      summary: "Full-stack e-learning platform with Stripe payments, video lessons, quizzes and auto-generated certificates.",
+      tags: [
+        "React 19",
+        "FastAPI",
+        "MongoDB",
+        "Stripe",
+        "Docker",
+        "Nginx",
+        "Tailwind"
+      ],
+      tagline: "A members-only online course platform for couples preparing to marry in church.",
+      role: "Full-stack developer (sole developer)",
+      stack: [
+        {
+          "label": "Frontend",
+          "items": [
+            "JavaScript",
+            "React 19"
+          ]
+        },
+        {
+          "label": "Backend",
+          "items": [
+            "Python 3.12",
+            "JavaScript",
+            "FastAPI",
+            "Node.js/Express"
+          ]
+        },
+        {
+          "label": "Databases",
+          "items": [
+            "MongoDB"
+          ]
+        },
+        {
+          "label": "UI & Styling",
+          "items": [
+            "Tailwind CSS",
+            "Vite"
+          ]
+        },
+        {
+          "label": "Libraries and Drivers",
+          "items": [
+            "Motor",
+            "React Router 7"
+          ]
+        },
+        {
+          "label": "Integrations",
+          "items": [
+            "Stripe"
+          ]
+        },
+        {
+          "label": "DevOps",
+          "items": [
+            "Docker Compose",
+            "Nginx"
+          ]
+        }
+      ],
       video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/websites/marriage%20course.mp4",
       liveUrl: "https://marriagecourse.uckg.org/",
-      description:
-        "I built this platform during my internship for UCKG HelpCentre as a complete online course system, bringing together a public landing site, a secure learner area, admin tools, and Stripe-based enrollment.\n\nThe main challenge was to make the experience simple for learners while keeping the admin side controlled and secure. Users can purchase access, sign in, move through lessons, and track their progress, while administrators can manage lessons, translations, user records, and completion workflows from one place.\n\nA large part of the work was focused on authentication and access control. I implemented protected routes, secure session handling, remember-me behaviour, CSRF protection, and rate limiting so the platform could be used confidently in production. Stripe Checkout and webhooks were also integrated so payment activity could be tied directly to learner access.\n\nI also added the supporting pages and policies needed for a real deployment, including privacy, terms, and refund-related flows. The result was a complete product rather than a collection of disconnected features.\n\nTech Stack\n\nFrontend\n\nReact\n\nTailwind CSS\n\nBackend\n\nFastAPI (Python)\n\nMongoDB with Motor\n\nPayments\n\nStripe\n\nInfrastructure\n\nDocker Compose\n\nNginx\n\nKey Features\n\nMarketing site and learner portal in one platform\n\nProtected routes and secure session-based authentication\n\nAdmin tools for lessons, translations, users, and completions\n\nStripe-driven enrollment and webhook processing\n\nPrivacy, terms, and refund policy support\n\nProduction-oriented security and deployment setup\n\nWhy this project matters\n\nThis project shows my ability to build a real full-stack product that balances learner experience, admin usability, and payment workflows in a production environment.",
-      year: "",
+      sections: [
+        {
+          "heading": "Overview",
+          "paragraphs": [
+            "UCKG requires church members who want to marry in church to complete a pre-marriage course. I designed and built the full platform behind it: a landing site, a Stripe checkout, a learner app where members watch lessons and take quizzes, and an admin panel for managing content and tracking progress. Members who finish every lesson and quiz receive a certificate."
+          ]
+        },
+        {
+          "heading": "Learner experience",
+          "items": [
+            {
+              "text": "Members pay through Stripe; a webhook creates their account automatically and emails a secure link to set their password."
+            },
+            {
+              "text": "Lessons play in a custom video player with saved resume position, progress tracking, cross-browser fullscreen (including iOS) and auto-fullscreen in mobile landscape."
+            },
+            {
+              "text": "Each lesson ends with a server-scored quiz."
+            },
+            {
+              "text": "Couples study together or separately using \"Who is watching?\" profiles."
+            },
+            {
+              "text": "After completing the course, members download a certificate as PDF or PNG, with a combined certificate for couples."
+            },
+            {
+              "text": "Available in English and Portuguese, with light and dark themes."
+            }
+          ]
+        },
+        {
+          "heading": "Admin panel",
+          "items": [
+            {
+              "text": "Create and edit lessons, videos and quizzes, including translations, without code."
+            },
+            {
+              "text": "Track every user's video progress, quiz results and completions on live-refreshing dashboards."
+            },
+            {
+              "text": "Invite admins by email, review uploaded payment proofs, and edit site text (titles, hero copy, logo) through a built-in content manager."
+            }
+          ]
+        },
+        {
+          "heading": "Technical highlights",
+          "items": [
+            {
+              "label": "Security",
+              "text": "cookie sessions with bcrypt hashing, CSRF double-submit protection, role-based route guards, rate limiting in the app and Nginx, and strict security headers (CSP, HSTS, X-Frame-Options)."
+            },
+            {
+              "label": "Payments",
+              "text": "Stripe Checkout for one-time and subscription prices, verified webhooks, and a fallback sync so no paying user is left without an account."
+            },
+            {
+              "label": "Certificates",
+              "text": "generated server-side with ReportLab and Pillow, plus client-side PDF export."
+            },
+            {
+              "label": "Time-limited access",
+              "text": "configurable video access window per user (for example 6 months)."
+            },
+            {
+              "label": "Architecture",
+              "text": "five Docker services (React SPA, FastAPI API, Express checkout, static landing site, MongoDB) behind Nginx, with code splitting and long-term asset caching."
+            }
+          ]
+        }
+      ],
     },
     {
-      id: "website-6",
-      title: "Rescue of Dignity (ROD)",
-      image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/websites/Rod.png",
-      liveUrl: "https://rod.uckg.org/",
-      description:
-        "ROD is a secure case-management platform I worked on during my internship for UCKG HelpCentre. It was created to help staff and family members submit, review, and manage sensitive case records in a controlled and accountable way.\n\nThe project was centred around building a reliable workflow rather than just a dashboard. Cases move through submission, assignment, approval, and closure, with access controlled according to user role. Because the information handled by the system is sensitive, security and traceability were treated as core requirements from the start.\n\nI worked on features such as multi-step authentication with OTP, trusted-device logic, audit logging, secure file uploads, and configurable intake forms. The goal was to reduce admin friction where possible while still keeping a strong security model in place. Schema-based validation and structured UI patterns were applied throughout to make the form experience cleaner and more dependable for users.\n\nWhat made this project valuable was the balance between security and usability. It had to feel professional and easy to use, but it also had to stand up to real operational requirements around accountability, permissions, and data handling.\n\nTech Stack\n\nFrontend\n\nNext.js\n\nReact\n\nTypeScript\n\nBackend\n\nNode.js\n\nExpress\n\nPrisma ORM\n\nDatabase\n\nPostgreSQL\n\nInfrastructure\n\nDocker\n\nDocker Compose\n\nNginx\n\nKey Features\n\nRole-based case intake and management workflow\n\nOTP-based authentication with trusted-device support\n\nAudit logs for logins, updates, and approvals\n\nSecure file upload validation and restrictions\n\nDynamic form configuration without code changes\n\nValidation-focused UI for sensitive workflows\n\nWhy this project matters\n\nThis project shows my ability to work on secure, process-driven systems where reliability, permissions, and auditability matter as much as the interface itself.",
-      year: "",
+      id: "website-vyg",
+      title: "VYG Youth Group Website",
+      summary: "Church youth ministry website with a custom CMS admin panel, PayPal donations and an interactive branch finder map.",
+      tags: [
+        "React 19",
+        "Tailwind CSS 4",
+        "Express",
+        "PostgreSQL",
+        "PayPal",
+        "Leaflet",
+        "Docker"
+      ],
+      tagline: "A complete public website and content management system for a church youth ministry.",
+      role: "Full-stack developer (sole developer)",
+      stack: [
+        {
+          "label": "Frontend",
+          "items": [
+            "JavaScript",
+            "React 19"
+          ]
+        },
+        {
+          "label": "Backend",
+          "items": [
+            "JavaScript",
+            "SQL",
+            "Node.js",
+            "Express"
+          ]
+        },
+        {
+          "label": "Databases",
+          "items": [
+            "PostgreSQL 16 (raw SQL)"
+          ]
+        },
+        {
+          "label": "UI & Styling",
+          "items": [
+            "Tailwind CSS 4",
+            "Framer Motion",
+            "Vite"
+          ]
+        },
+        {
+          "label": "Libraries and Drivers",
+          "items": [
+            "React Router 7",
+            "Leaflet",
+            "Nodemailer"
+          ]
+        },
+        {
+          "label": "Integrations",
+          "items": [
+            "PayPal",
+            "Google reCAPTCHA"
+          ]
+        },
+        {
+          "label": "DevOps",
+          "items": [
+            "Docker Compose",
+            "Nginx"
+          ]
+        }
+      ],
+      liveUrl: "https://victoryyouthgroup.org/",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/websites/VYG_DEMO.mp4",
+      sections: [
+        {
+          "heading": "Overview",
+          "paragraphs": [
+            "The youth group needed a modern website to share who they are, promote events, publish testimonies and accept donations, and the team needed to keep it current without a developer. I built the public site and a custom admin panel where every section can be managed: events, sessions, projects, radio shows, testimonies, branches, social links and site media."
+          ]
+        },
+        {
+          "heading": "Public website",
+          "items": [
+            {
+              "text": "14 pages covering About, Projects, Events, Sessions, Testimonies, Donate, Contact and Privacy, with smooth page transitions."
+            },
+            {
+              "label": "Events",
+              "text": "filter by All, Upcoming or Past, open photo and video galleries, and click through to external ticket booking."
+            },
+            {
+              "label": "Testimonies",
+              "text": "personal stories with profile photos and galleries in a fullscreen lightbox with keyboard navigation."
+            },
+            {
+              "label": "Find a Branch",
+              "text": "enter a UK postcode to see the nearest branches on an interactive Leaflet map."
+            },
+            {
+              "label": "Donations",
+              "text": "PayPal integration with sandbox and live modes."
+            },
+            {
+              "label": "Contact and prayer requests",
+              "text": "reCAPTCHA-protected forms delivered to the team by email."
+            },
+            {
+              "text": "Fully responsive, with a cookie consent banner and privacy policy."
+            }
+          ]
+        },
+        {
+          "heading": "Admin panel (custom CMS)",
+          "items": [
+            {
+              "text": "19 admin screens to manage every piece of site content without code."
+            },
+            {
+              "text": "Rich text and block-based editors with live preview for testimonies, sessions and projects."
+            },
+            {
+              "text": "Multi-image and video uploads with instant previews and sort ordering."
+            },
+            {
+              "text": "Prayer request inbox, radio show manager, social media link manager and branch manager."
+            },
+            {
+              "text": "Multiple admin accounts, an audit log of every admin action, and a QR code generator for print materials."
+            }
+          ]
+        },
+        {
+          "heading": "Technical highlights",
+          "items": [
+            {
+              "label": "Secure admin login",
+              "text": "email OTP codes, bcrypt hashing, JWT access tokens with refresh token rotation stored in the database, and email password reset."
+            },
+            {
+              "label": "Protection",
+              "text": "Helmet headers, Content Security Policy in Nginx, and per-endpoint rate limiting on login, OTP, reset and contact routes."
+            },
+            {
+              "label": "Performance",
+              "text": "lazy-loaded routes and six manual code-split bundles; no source maps in production."
+            },
+            {
+              "label": "Database",
+              "text": "PostgreSQL with 20 tables, hand-written SQL and automatic migrations on startup."
+            },
+            {
+              "label": "Deployment",
+              "text": "three Docker services (PostgreSQL, Express API, Nginx frontend) on a self-hosted VPS with persistent volumes."
+            },
+            {
+              "label": "Code quality",
+              "text": "ESLint with React Hooks rules, reusable context hooks and a single API service layer."
+            }
+          ]
+        }
+      ],
+    },
+    {
+      id: "website-help",
+      title: "HELP – Project Website",
+      summary: "Server-rendered support website with a custom admin CMS, dynamic form builder, blog and media albums.",
+      tags: [
+        "Next.js 16",
+        "TypeScript",
+        "Fastify",
+        "PostgreSQL",
+        "Prisma",
+        "shadcn/ui",
+        "Docker"
+      ],
+      tagline: "A public support website for a church youth initiative, fully managed through a custom admin portal.",
+      role: "Full-stack developer (sole developer)",
+      stack: [
+        {
+          "label": "Frontend",
+          "items": [
+            "TypeScript (strict)",
+            "Next.js 16 (App Router)",
+            "React 19"
+          ]
+        },
+        {
+          "label": "Backend",
+          "items": [
+            "TypeScript (strict)",
+            "Fastify 5"
+          ]
+        },
+        {
+          "label": "Databases",
+          "items": [
+            "PostgreSQL 16"
+          ]
+        },
+        {
+          "label": "UI & Styling",
+          "items": [
+            "Tailwind CSS 4",
+            "shadcn/ui (Radix UI)",
+            "Framer Motion"
+          ]
+        },
+        {
+          "label": "Libraries and Drivers",
+          "items": [
+            "Prisma ORM",
+            "Zod",
+            "React Hook Form",
+            "Nodemailer"
+          ]
+        },
+        {
+          "label": "Integrations",
+          "items": [
+            "reCAPTCHA"
+          ]
+        },
+        {
+          "label": "DevOps",
+          "items": [
+            "Docker Compose",
+            "Nginx"
+          ]
+        }
+      ],
+      liveUrl: "https://helpproject.co.uk/",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/websites/HELP_demo.mp4",
+      sections: [
+        {
+          "heading": "Overview",
+          "paragraphs": [
+            "HELP is a youth support initiative run by the church youth group. It needed a website where young people can reach out for help, schools can request programmes, and the team can share news and photos. I built the public site and a custom admin portal so the team can update everything, from homepage text and helpline details to blog posts, albums and form fields, without a developer.",
+            "Unlike the VYG site, HELP is built as a support service rather than a community hub, and on a different stack: server-rendered Next.js with a Fastify and Prisma API in strict TypeScript."
+          ]
+        },
+        {
+          "heading": "Public website",
+          "items": [
+            {
+              "label": "Get Help form",
+              "text": "young people request support through a form whose fields admins configure."
+            },
+            {
+              "label": "Schools programme",
+              "text": "schools submit visit requests, protected by reCAPTCHA."
+            },
+            {
+              "label": "Blog",
+              "text": "news and stories with categories, rich content and image and video galleries."
+            },
+            {
+              "label": "Albums",
+              "text": "photo and video albums with a fullscreen lightbox."
+            },
+            {
+              "text": "Floating WhatsApp contact button, cookie consent banner and privacy policy."
+            },
+            {
+              "text": "Server-rendered pages, so admin updates appear on the live site instantly."
+            }
+          ]
+        },
+        {
+          "heading": "Admin portal",
+          "items": [
+            {
+              "text": "Edit homepage hero, mission, helpline text, images, videos and social links."
+            },
+            {
+              "text": "Write and publish blog posts with a rich text editor."
+            },
+            {
+              "text": "Manage albums with drag-and-drop media uploads."
+            },
+            {
+              "label": "Form builder",
+              "text": "add, remove and reorder fields on the public Get Help form."
+            },
+            {
+              "text": "Review Get Help and school submissions in one place."
+            },
+            {
+              "text": "Manage multiple admin accounts, with an audit log (including failed logins) exportable to CSV."
+            }
+          ]
+        },
+        {
+          "heading": "Technical highlights",
+          "items": [
+            {
+              "label": "Fully typed",
+              "text": "strict TypeScript across frontend and backend, with Zod validation on both sides."
+            },
+            {
+              "label": "Modern UI system",
+              "text": "shadcn/ui-style components on Radix UI primitives for accessible dialogs, menus, tabs and forms."
+            },
+            {
+              "label": "Secure admin access",
+              "text": "email OTP two-factor login, bcrypt hashing, JWT sessions and OTP password reset."
+            },
+            {
+              "label": "Safe content",
+              "text": "blog HTML sanitised with DOMPurify; uploads checked by magic bytes."
+            },
+            {
+              "label": "Abuse protection",
+              "text": "reCAPTCHA verified server-side and per-route rate limiting on login and public forms."
+            },
+            {
+              "label": "Fast API",
+              "text": "Fastify backend with Prisma for typed database access."
+            },
+            {
+              "label": "Deployment",
+              "text": "three Docker services with multi-stage builds and Next.js standalone output for small production images."
+            }
+          ]
+        }
+      ],
     },
     {
       id: "website-7",
       title: "SSS Automobile Limited Website",
-      image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/websites/SSS.png",
+      summary: "Multi-page business website for a UK automobile company, with clear service pages, an online booking form and Google Maps.",
+      tags: [
+        "React",
+        "Tailwind CSS",
+        "Google Maps",
+        "Static hosting"
+      ],
+      tagline: "A business website that presents the company professionally and makes it easy for customers to get in touch.",
+      role: "Front-end developer (sole developer)",
+      stack: [
+        {
+          "label": "Frontend",
+          "items": [
+            "React"
+          ]
+        },
+        {
+          "label": "UI & Styling",
+          "items": [
+            "Tailwind CSS"
+          ]
+        },
+        {
+          "label": "Integrations",
+          "items": [
+            "Google Maps"
+          ]
+        },
+        {
+          "label": "DevOps",
+          "items": [
+            "Static front-end build",
+            "Custom domain"
+          ]
+        }
+      ],
       liveUrl: "https://sssautomobilelimited.uk/",
-      description:
-        "This website was built for SSS Automobile Limited as a modern business site focused on trust, clarity, and customer action. The aim was to present the company professionally on mobile and desktop while making it easy for visitors to understand the services and get in touch.\n\nI structured the site as a multi-page React application with clear routing, strong service presentation, and an interactive booking form. Google Maps was also integrated so customers could quickly find the business without needing extra steps.\n\nA lot of attention went into the visual side of the project. I used layered gradients, glassmorphism touches, hover-lift effects, and restrained motion so the site would feel premium without becoming distracting. The final result is a business website that looks polished, responds well across devices, and gives the brand a much stronger online presence.\n\nThe project was deployed as a static front-end build with a custom domain, keeping the setup lightweight while still suitable for production use.\n\nTech Stack\n\nFrontend\n\nReact\n\nTailwind CSS\n\nKey Features\n\nMobile-first responsive layout\n\nMulti-page site structure\n\nInteractive booking form\n\nGoogle Maps integration\n\nPremium UI styling with subtle motion\n\nStatic deployment with custom domain\n\nWhy this project matters\n\nThis project shows my ability to build commercial front-end websites that are not only visually strong, but also practical for real businesses and real users.",
-      year: "",
-    },
-    {
-      id: "website-3",
-      title: "Robust Life - Personal Portfolio Website",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/websites/robust.mp4",
-      description:
-        "I developed this website for a client who wanted a strong personal brand platform rather than a simple portfolio. The project was built around his vision, message, and the way he wanted visitors to understand his work and values.\n\nThe site introduces the brand through a clear public-facing structure, with a hero section, supporting content blocks, and dedicated pages that explain the client's mission, pillars, and related focus areas. My goal was to make the experience feel professional and easy to follow, while still giving the brand enough personality to stand out.\n\nOne of the most important parts of the build was translating a broad personal brand into a structure that feels clear on screen. The pillar-based sections, spotlight areas, and deeper content pages were all designed to guide users through the story naturally rather than presenting everything at once.\n\nBehind the public site, the project also included scaffolding for admin-side content management and protected functionality, making it easier to expand and maintain over time. This made the build more than a marketing website; it became the foundation for a scalable branded platform.\n\nTech Stack\n\nFrontend\n\nNext.js 14\n\nTypeScript\n\nTailwind CSS\n\nFramer Motion\n\nBackend\n\nNode.js\n\nExpress\n\nMongoDB with Mongoose\n\nInfrastructure\n\nDocker\n\nDocker Compose\n\nNginx\n\nKey Features\n\nResponsive brand-focused public website\n\nStructured pillar-based content experience\n\nDedicated pages for mission, vision, and partnerships\n\nScaffolded admin-ready architecture for future growth\n\nProtected API and content management foundations\n\nWhy this project matters\n\nThis project reflects my ability to take a client's brand direction and turn it into a clean, scalable website that supports both presentation and long-term growth.",
-      year: "",
-    },
-    {
-      id: "website-1",
-      title: "IPC Church Website",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/websites/ipc_website.mp4",
-      description:
-        "I built this website for my church in India as a practical project while I was learning web development. More than anything, it came from wanting to solve real needs inside the church rather than just building something for practice.\n\nThe site brings together service information, church updates, media content, location details, and a digital songbook in one place. One of the most important parts of the project was the searchable songbook, which was designed to make a large collection of worship songs easier to access during services. It supports Telugu and romanised search, works well on mobile, and was built with actual day-to-day church use in mind.\n\nI also added content management features so verses, highlights, videos, schedules, and uploaded content could be updated through an admin area without needing to redeploy the site. Contact and prayer request functionality were included as well, so the site could serve both members and visitors in a useful way.\n\nThis project taught me a lot because it was tied to real users and real expectations. It pushed me beyond layout and styling into thinking about search, content workflows, admin usability, and how to turn a community need into a working full-stack product.\n\nTech Stack\n\nFrontend\n\nReact\n\nTailwind CSS\n\nAxios\n\nBackend\n\nFastAPI (Python)\n\nMongoDB with Motor\n\nPasslib\n\nInfrastructure\n\nDocker\n\nKey Features\n\nSearchable digital songbook with Telugu and romanised search\n\nAdmin-managed verses, highlights, schedules, and videos\n\nMedia page for live and recorded content\n\nContact and prayer request workflows\n\nChurch information and Google Maps integration\n\nWhy this project matters\n\nThis was one of the projects that helped shape how I think as a developer. It shows how I approach real user needs, build useful systems, and keep improving by learning through practical work.",
-      year: "",
-    },
-    {
-      id: "website-4",
-      title: "Broadcast Control Assistant",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/websites/tv.mp4",
-      description:
-        "I created this tool after observing a repeated problem while working part-time in a broadcast studio. The team had to manage program timings, video inserts, presenter segments, and live or recorded runs using a mix of separate tools and manual calculations, which made the workflow harder than it needed to be.\n\nThe idea behind the project was simple: bring those timing and planning tasks into one place. I built a lightweight web application that helps the operator structure the running order, calculate airtime, track segment duration, and manage both live and recording scenarios more clearly.\n\nThe application includes timing tools such as a stopwatch, countdown timer, and airtime calculator, but the real value is in how they work together. I also built a program sheet flow where media items can be arranged into sequence, with timings updating as the show structure changes. Features like comments and PDF export were added to make it genuinely useful in a working production environment.\n\nThis project was built with plain HTML, CSS, and JavaScript because the focus was speed, clarity, and solving the problem directly rather than adding extra technical complexity. It came from watching a real workflow, identifying what slowed people down, and turning that into a practical tool.\n\nTech Stack\n\nFrontend\n\nHTML\n\nCSS\n\nJavaScript\n\nKey Features\n\nStopwatch, countdown, and airtime utilities\n\nLive mode and recording mode workflows\n\nProgram sheet builder with drag-and-drop structure\n\nAutomatic timing recalculation as segments change\n\nComments and PDF export support\n\nWhy this project matters\n\nThis project shows how I approach problem-solving in real environments. It reflects my ability to observe a workflow, identify friction points, and build something useful that improves day-to-day operations.",
-      year: "",
+      image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/websites/SSS.png",
+      sections: [
+        {
+          "heading": "Overview",
+          "paragraphs": [
+            "SSS Automobile Limited needed a website that builds trust and turns visitors into customers. The aim was to present the company properly on mobile and desktop, explain the services clearly and give people a quick way to book or find the business.",
+            "I built it as a multi-page React application with clear routing, dedicated service presentation and an interactive booking form, then deployed it as a static build on the company's own domain."
+          ]
+        },
+        {
+          "heading": "What the website does",
+          "items": [
+            {
+              "text": "Presents the company and its services across a multi-page structure."
+            },
+            {
+              "text": "Lets customers send a booking request through an interactive form."
+            },
+            {
+              "text": "Shows the business location with an embedded Google Map, so customers can find it without leaving the site."
+            },
+            {
+              "text": "Works on any screen size with a mobile-first responsive layout."
+            }
+          ]
+        },
+        {
+          "heading": "Technical highlights",
+          "items": [
+            {
+              "label": "Multi-page routing",
+              "text": "separate pages for each part of the site with client-side routing."
+            },
+            {
+              "label": "Visual design",
+              "text": "layered gradients, glassmorphism touches, hover-lift effects and restrained motion for a premium feel that does not distract."
+            },
+            {
+              "label": "Mobile-first build",
+              "text": "layouts designed for phones first, then scaled up to tablet and desktop with Tailwind CSS."
+            },
+            {
+              "label": "Lightweight deployment",
+              "text": "static front-end build on a custom domain, with no server to maintain."
+            }
+          ]
+        }
+      ],
     },
     {
       id: "website-5",
       title: "My Personal Portfolio Website",
-      image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/websites/MY_Portfilo.png",
-      description:
-        "I built this portfolio to present my work in a way that feels personal, polished, and easy to explore. Rather than treating it as a static gallery, I approached it like a real front-end product with attention to structure, interaction, and overall user experience.\n\nThe site combines my software work, design projects, and video editing into one consistent experience. I spent a lot of time shaping the visual direction so it would feel premium without becoming heavy or confusing. The dark theme, gradients, glow effects, layered backgrounds, and motion were all chosen to support the content rather than compete with it.\n\nI also used this project as a place to refine interaction details such as animated hero content, project sliders, media previews, smooth route changes, and section-based storytelling. The About page, Works pages, and contact flow were all built to make the site feel more complete than a simple one-page portfolio.\n\nBecause it is my own platform, I keep improving it over time. It evolves as I add projects, refine the design, and tighten the experience based on what I learn.\n\nTech Stack\n\nFrontend\n\nReact 19\n\nTailwind CSS\n\nFramer Motion\n\nSwiper\n\nDeployment\n\nNetlify\n\nKey Features\n\nAnimated hero with role transitions and floating icons\n\nDedicated sections for websites, posters, and video work\n\nLong-form About page with timeline layout\n\nInteractive media previews and project pages\n\nSmooth transitions, depth effects, and premium visual styling\n\nDirect contact integration\n\nWhy this project matters\n\nThis portfolio represents how I think as a front-end developer and creative builder. It brings together design sense, implementation detail, and continuous improvement in one product.",
-      year: "",
+      summary: "Personal portfolio for my software and media work, with an animated WebGL background, case study pages and lazy-loaded video galleries.",
+      tags: [
+        "React 19",
+        "Vite",
+        "Tailwind CSS",
+        "WebGL",
+        "Swiper",
+        "Netlify"
+      ],
+      tagline: "My own website, built to show both sides of my work: software projects and media production.",
+      role: "Designer and front-end developer (sole developer)",
+      stack: [
+        {
+          "label": "Frontend",
+          "items": [
+            "JavaScript",
+            "React 19"
+          ]
+        },
+        {
+          "label": "UI & Styling",
+          "items": [
+            "Tailwind CSS 3",
+            "WebGL2 (custom shader)"
+          ]
+        },
+        {
+          "label": "Libraries and Drivers",
+          "items": [
+            "React Router 7",
+            "Swiper 12",
+            "Lucide React"
+          ]
+        },
+        {
+          "label": "DevOps",
+          "items": [
+            "Vite 5",
+            "Netlify",
+            "Cloudflare R2"
+          ]
+        }
+      ],
+      image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/websites/portfilo_Demo.png",
+      sections: [
+        {
+          "heading": "Overview",
+          "paragraphs": [
+            "I needed one place to present two kinds of work: full-stack web projects and creative media such as posters and video edits. I designed and built this site myself. It has a home page with my skills and featured work, an About page with my story and experience, gallery pages for each type of work, and a case study page for every software project.",
+            "An earlier version used heavy animation libraries and felt slow, so I rebuilt it with performance as a requirement: no animation libraries, media that loads only when needed, and a background shader tuned to stay smooth."
+          ]
+        },
+        {
+          "heading": "What the site includes",
+          "items": [
+            {
+              "text": "Hero section with typed role titles and a photo that changes with each role."
+            },
+            {
+              "text": "Skills grouped into Media & Design and Development, with level bars that fill on scroll."
+            },
+            {
+              "text": "Coverflow sliders for websites, posters and videos on the home page."
+            },
+            {
+              "text": "Gallery pages with a masonry poster grid and a video grid."
+            },
+            {
+              "text": "Case study pages built from structured project data: role, live link, tech stack and feature sections."
+            },
+            {
+              "text": "About page with my full story, work experience and education timelines."
+            },
+            {
+              "text": "Contact form that opens a pre-filled email."
+            }
+          ]
+        },
+        {
+          "heading": "Technical highlights",
+          "items": [
+            {
+              "label": "Animated background",
+              "text": "custom WebGL2 gradient shader adapted from React Bits, rendered at half resolution and capped at 30 fps. It pauses in hidden tabs and falls back to a static CSS gradient when WebGL2 is not available."
+            },
+            {
+              "label": "Lazy media",
+              "text": "videos load only when scrolled into view and play only while visible; images use native lazy loading."
+            },
+            {
+              "label": "Lightweight motion",
+              "text": "scroll reveals use one shared IntersectionObserver and CSS transitions instead of an animation library."
+            },
+            {
+              "label": "Reduced motion support",
+              "text": "reveals, gradients and the background all respect the visitor's reduced-motion setting."
+            },
+            {
+              "label": "Data-driven content",
+              "text": "projects, skills and timelines live in one data file, so adding a project needs no layout changes."
+            },
+            {
+              "label": "Deployment",
+              "text": "static Vite build on Netlify with SPA routing; images and videos served from Cloudflare R2."
+            }
+          ]
+        }
+      ],
     },
   ],
 };

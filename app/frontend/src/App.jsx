@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ProjectPage from "./pages/ProjectPage";
 import WorksListPage from "./pages/WorksListPage";
+import GrainientBackground from "./components/ui/GrainientBackground";
 import "./App.css";
 
 function App() {
@@ -20,18 +20,22 @@ function App() {
   }, []);
 
   useEffect(() => {
+    if (location.hash) return;
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
+    <>
+      <div className="bg-aura" />
+      <GrainientBackground />
+      <div className="bg-shapes" />
+      <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/works/:type" element={<WorksListPage />} />
         <Route path="/project/:type/:id" element={<ProjectPage />} />
       </Routes>
-    </AnimatePresence>
+    </>
   );
 }
 

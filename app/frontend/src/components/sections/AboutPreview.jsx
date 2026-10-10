@@ -1,67 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import TiltCard from "../ui/TiltCard";
-
+import { ArrowRight } from "lucide-react";
+import SectionHeading from "../ui/SectionHeading";
 
 function AboutPreview() {
   return (
     <section id="about" className="section">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 xl:max-w-7xl">
-        {/* Section header — centered */}
-        <div className="text-center">
-          <motion.div
-            className="neon-outline inline-flex"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <span>About Me</span>
-          </motion.div>
-          <div className="section-line" />
-          <motion.h2
-            className="section-title mt-5 text-gradient section-title-glow"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            My Story
-          </motion.h2>
-        </div>
+      <div className="container-site">
+        <SectionHeading label="About Me" title="My Story" center />
 
-        <div className="mt-10">
-          <TiltCard className="premium-glass card-glow p-8 text-left relative overflow-hidden">
-            <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-purple-500/10 blur-3xl" />
-            <div className="pointer-events-none absolute -left-16 -bottom-16 h-48 w-48 rounded-full bg-cyan-500/[0.08] blur-3xl" />
-            <div className="mb-6 h-px w-full bg-gradient-to-r from-cyan-400/40 via-purple-400/50 to-transparent" />
-
-            <p className="text-[15px] leading-[1.8] text-slate-300">
+        <div className="glass reveal relative mx-auto mt-12 max-w-4xl overflow-hidden p-8 md:p-12">
+          <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-white/15 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-sky-300/45 blur-3xl" />
+          <div className="relative space-y-5 text-[16px] leading-[1.85] text-muted">
+            <p>
               From an early age, I grew up actively involved in church media, where I gained hands-on
               experience in sound operation, live streaming, camera operation, graphic design, and video
               editing. These experiences shaped my creative foundation and were largely self-driven,
               built through real-world practice.
             </p>
-            <p className="mt-4 text-[15px] leading-[1.8] text-slate-300">
+            <p>
               Alongside this, I pursued a Diploma in Electronics and Communication Engineering, where I
               developed strong technical knowledge and transitioned into software development. Today, I
-              bring together multiple independent skills across media production and technology to deliver
-              professional, reliable results.
+              bring together multiple independent skills across media production and technology to
+              deliver professional, reliable results.
             </p>
-            <p className="mt-4 text-[15px] leading-[1.8] text-slate-400">
-              Offering multiple professional skill sets with a strong focus on quality, reliability, and
-              consistency.
-            </p>
-
-            <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-purple-400/30 to-transparent" />
-            <div className="mt-8 flex">
-              <Link className="neon-button attention pulse" to="/about">
-                View My Full Journey
-              </Link>
-            </div>
-          </TiltCard>
-
+          </div>
+          <Link className="btn-grad relative mt-8" to="/about">
+            View My Full Journey <ArrowRight size={16} />
+          </Link>
         </div>
       </div>
     </section>

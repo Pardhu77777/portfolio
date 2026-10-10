@@ -1,16 +1,133 @@
 import React from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
-import FloatingIcons from "../components/FloatingIcons";
-import Header from "../components/layout/Header";
-import Footer from "../components/layout/Footer";
-import TiltCard from "../components/ui/TiltCard";
+import { useParams, Link } from "react-router-dom";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import Layout from "../components/layout/Layout";
+import CaseStudy from "../components/project/CaseStudy";
 import { works, projectDetails } from "../data/portfolioData";
-import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
+
+const majorHeadings = new Set([
+  "Tech Stack",
+  "Key Features",
+  "Key Features and Architecture",
+  "Key Use Cases",
+  "Key Responsibilities",
+  "Why this project matters",
+  "Learner experience",
+  "Admin experience",
+  "Payments + access control",
+  "Payment Service",
+]);
+const minorHeadings = new Set([
+  "Frontend",
+  "Backend",
+  "Database",
+  "Payments",
+  "Email",
+  "Security",
+  "Infrastructure",
+  "Deployment",
+]);
+
+function renderDescription(text) {
+  if (!text) return null;
+
+  const blocks = text.split("\n\n").map((block) => block.trim()).filter(Boolean);
+  const elements = [];
+  let inTechStack = false;
+  let techGroups = [];
+  let currentGroup = null;
+  let pendingList = null;
+
+  const flushTechStack = () => {
+    if (techGroups.length === 0) return;
+    elements.push(
+      <dl key={`tech-${elements.length}`} className="glass mt-5 divide-y divide-line overflow-hidden px-6">
+        {techGroups.map((group) => (
+          <div key={group.heading} className="grid items-center gap-2 py-4 sm:grid-cols-[150px_1fr]">
+            <dt className="text-sm font-semibold text-accent">{group.heading}</dt>
+            <dd className="flex flex-wrap gap-2">
+              {group.items.map((tech) => (
+                <span key={tech} className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium text-white">
+                  {tech}
+                </span>
+              ))}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    );
+    techGroups = [];
+    currentGroup = null;
+  };
+
+  const flushList = () => {
+    if (!pendingList || pendingList.length === 0) {
+      pendingList = null;
+      return;
+    }
+    elements.push(
+      <ul key={`list-${elements.length}`} className="mt-5 space-y-3 text-muted">
+        {pendingList.map((line) => (
+          <li key={line} className="flex gap-3">
+            <span className="mt-2 h-2 w-2 shrink-0 rounded-full" style={{ background: "#5eead4" }} />
+            <span>{line}</span>
+          </li>
+        ))}
+      </ul>
+    );
+    pendingList = null;
+  };
+
+  blocks.forEach((block, index) => {
+    if (majorHeadings.has(block)) {
+      flushTechStack();
+      flushList();
+      inTechStack = block === "Tech Stack";
+      if (!inTechStack) pendingList = [];
+      elements.push(
+        <h2 key={`h-${index}`} className="mt-12 font-display text-xl font-bold tracking-tight text-gradient">
+          {block}
+        </h2>
+      );
+      return;
+    }
+
+    if (inTechStack && minorHeadings.has(block)) {
+      currentGroup = { heading: block, items: [] };
+      techGroups.push(currentGroup);
+      return;
+    }
+
+    const lines = block.split("\n").map((line) => line.trim()).filter(Boolean);
+    const cleaned = lines.map((line) => (line.startsWith("- ") ? line.slice(2) : line));
+
+    if (inTechStack && currentGroup) {
+      currentGroup.items.push(...cleaned);
+      return;
+    }
+
+    const isBulletBlock = lines.every((line) => line.startsWith("- "));
+    const isShortItem = pendingList && lines.length === 1 && block.length < 90 && !/[.!?]$/.test(block);
+    if (pendingList && (isBulletBlock || isShortItem)) {
+      pendingList.push(...cleaned);
+      return;
+    }
+
+    flushList();
+    elements.push(
+      <p key={`p-${index}`} className="mt-5 leading-[1.8] text-muted">
+        {block}
+      </p>
+    );
+  });
+
+  flushTechStack();
+  flushList();
+  return elements;
+}
 
 function ProjectPage() {
   const { type, id } = useParams();
-  const navigate = useNavigate();
 
   const key = type === "poster" ? "posters" : type === "video" ? "videosAll" : "websites";
   const list = works[key] || [];
@@ -19,221 +136,71 @@ function ProjectPage() {
   const details = projectDetails[type] || projectDetails.poster;
   const description = project?.description || details.description;
 
-  const majorHeadings = new Set([
-    "Tech Stack",
-    "Key Features",
-    "Key Features and Architecture",
-    "Key Use Cases",
-    "Key Responsibilities",
-    "Why this project matters",
-    "Learner experience",
-    "Admin experience",
-    "Payments + access control",
-    "Payment Service",
-  ]);
-  const minorHeadings = new Set(["Frontend", "Backend", "Database", "Payments", "Email", "Security", "Infrastructure", "Deployment"]);
-
-  const renderDescription = (text) => {
-    if (!text) {
-      return null;
-    }
-
-    const blocks = text.split("\n\n").map((block) => block.trim()).filter(Boolean);
-    const elements = [];
-    let inTechStack = false;
-    let pendingTechStackGroup = null;
-
-    const flushTechStackGroup = () => {
-      if (!pendingTechStackGroup || pendingTechStackGroup.items.length === 0) {
-        pendingTechStackGroup = null;
-        return;
-      }
-
-      const items = pendingTechStackGroup.items;
-      elements.push(
-        <ul
-          key={`techstack-${pendingTechStackGroup.heading}`}
-          className="mt-3 grid gap-2 text-slate-300 sm:grid-cols-2"
-        >
-          {items.map((item) => (
-            <li key={item} className="flex items-start gap-2">
-              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-cyan-300/80" />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      );
-      pendingTechStackGroup = null;
-    };
-
-    blocks.forEach((block, index) => {
-      if (majorHeadings.has(block)) {
-        flushTechStackGroup();
-        inTechStack = block === "Tech Stack";
-        elements.push(
-          <h4
-            key={`desc-${index}`}
-            className="mt-6 text-sm uppercase tracking-[0.25em] text-cyan-300"
-          >
-            {block}
-          </h4>
-        );
-        return;
-      }
-
-      if (minorHeadings.has(block)) {
-        flushTechStackGroup();
-        if (inTechStack) {
-          pendingTechStackGroup = { heading: block, items: [] };
-        }
-        elements.push(
-          <h5 key={`desc-${index}`} className="mt-4 text-base font-semibold text-slate-100">
-            {block}
-          </h5>
-        );
-        return;
-      }
-
-      const lines = block.split("\n").map((line) => line.trim()).filter(Boolean);
-      if (inTechStack && pendingTechStackGroup) {
-        const cleaned = lines.map((line) => (line.startsWith("- ") ? line.slice(2) : line));
-        pendingTechStackGroup.items.push(...cleaned);
-        return;
-      }
-
-      if (lines.length > 0 && lines.every((line) => line.startsWith("- "))) {
-        elements.push(
-          <ul key={`desc-${index}`} className="mt-4 list-disc space-y-2 pl-5 text-slate-300">
-            {lines.map((line) => (
-              <li key={line}>{line.slice(2)}</li>
-            ))}
-          </ul>
-        );
-        return;
-      }
-
-      elements.push(
-        <p
-          key={`desc-${index}`}
-          className="mt-4 text-slate-300 leading-relaxed"
-          style={{ textAlign: "justify" }}
-        >
-          {block}
-        </p>
-      );
-    });
-
-    flushTechStackGroup();
-    return elements;
-  };
-
   const prev = list[currentIndex - 1];
   const next = list[currentIndex + 1];
 
+  if (project?.sections) {
+    return (
+      <Layout>
+        <CaseStudy project={project} prev={prev} next={next} type={type} />
+      </Layout>
+    );
+  }
+
   return (
-    <motion.div
-      className="page-shell"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.7, ease: "easeInOut" }}
-    >
-      <FloatingIcons />
-      <Header />
-      <section className="section">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="flex items-center justify-between">
-            <button
-              type="button"
-              className="flex items-center gap-2 text-sm text-slate-300"
-              onClick={() => navigate(-1)}
-            >
-              <ArrowLeft size={16} />
-              Back
-            </button>
-            <div className="flex items-center gap-3">
-              {prev && (
-                <Link
-                  className="flex items-center gap-2 text-sm text-slate-300"
-                  to={`/project/${type}/${prev.id}`}
-                >
-                  <ArrowLeft size={14} />
-                  Prev
-                </Link>
-              )}
-              {next && (
-                <Link
-                  className="flex items-center gap-2 text-sm text-slate-300"
-                  to={`/project/${type}/${next.id}`}
-                >
-                  Next
-                  <ArrowRight size={14} />
-                </Link>
-              )}
-            </div>
-          </div>
+    <Layout>
+      <article className="container-site pb-20 pt-8 md:pt-12">
+        <Link to={`/works/${type}`} className="btn-ghost h-10 px-4">
+          <ArrowLeft size={16} /> Back
+        </Link>
 
-          <div className="mt-10">
-            <h1 className="text-4xl font-bold">{project?.title || details.title}</h1>
-            {project?.liveUrl ? (
-              <div className="mt-4">
-                <a
-                  className="neon-button inline-flex"
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Visit Live Website <ExternalLink size={16} />
-                </a>
-              </div>
-            ) : null}
-            <div className="mt-6 glass-card overflow-hidden">
-              {project?.video ? (
-                <video
-                  src={project.video}
-                  className="h-auto w-full bg-black object-contain"
-                  controls
-                  preload="metadata"
-                />
-              ) : (
-                <img
-                  src={project?.image}
-                  alt={project?.title}
-                  className="h-auto w-full object-contain"
-                />
-              )}
-            </div>
-            <div className="mt-6">{renderDescription(description)}</div>
+        <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-3xl">
+            <h1 className="font-display text-[32px] font-bold leading-tight tracking-tight md:text-[46px]">
+              <span className="text-gradient">{project?.title || details.title}</span>
+            </h1>
+            {project?.tagline && <p className="mt-4 text-lg leading-relaxed text-muted">{project.tagline}</p>}
           </div>
-
-          {type === "poster" && (
-            <div className="mt-12">
-              <h3 className="text-xl font-semibold">Gallery</h3>
-              <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {list.slice(0, 3).map((item) => (
-                  <TiltCard key={`gallery-${item.id}`} className="overflow-hidden rounded-2xl">
-                    <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
-                  </TiltCard>
-                ))}
-              </div>
-            </div>
+          {project?.liveUrl && (
+            <a className="btn-grad shrink-0" href={project.liveUrl} target="_blank" rel="noreferrer">
+              Visit Live Website <ArrowUpRight size={16} />
+            </a>
           )}
-
-          <div className="mt-16 glass-card p-10 text-center">
-            <h3 className="text-2xl font-semibold">More Projects?</h3>
-            <p className="mt-3 text-slate-300">
-              Explore more of my creative and technical work.
-            </p>
-            <div className="mt-6 flex justify-center">
-              <Link className="neon-button" to="/">
-                Back to Home
-              </Link>
-            </div>
-          </div>
         </div>
-      </section>
-      <Footer />
-    </motion.div>
+
+        {(project?.video || project?.image) && (
+          <div className="glass mt-10 overflow-hidden p-2.5">
+            {project.video ? (
+              <video src={project.video} className="h-auto w-full rounded-2xl bg-black" controls preload="metadata" playsInline />
+            ) : (
+              <img src={project.image} alt={project.title} className="h-auto w-full rounded-2xl" />
+            )}
+          </div>
+        )}
+
+        <div className="mx-auto mt-6 max-w-3xl">{renderDescription(description)}</div>
+
+        {(prev || next) && (
+          <nav className="mx-auto mt-16 flex max-w-3xl flex-wrap items-center justify-between gap-3 text-sm">
+            {prev ? (
+              <Link to={`/project/${type}/${prev.id}`} className="btn-ghost h-auto min-h-10 max-w-[48%] px-4 py-2 text-left">
+                <ArrowLeft size={16} /> {prev.title}
+              </Link>
+            ) : (
+              <span />
+            )}
+            {next && (
+              <Link
+                to={`/project/${type}/${next.id}`}
+                className="btn-ghost ml-auto h-auto min-h-10 max-w-[48%] px-4 py-2 text-right"
+              >
+                {next.title} <ArrowRight size={16} />
+              </Link>
+            )}
+          </nav>
+        )}
+      </article>
+    </Layout>
   );
 }
 

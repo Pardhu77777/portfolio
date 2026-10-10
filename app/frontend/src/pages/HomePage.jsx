@@ -1,47 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import FloatingIcons from "../components/FloatingIcons";
-import ParticleField from "../components/ParticleField";
-import CursorGlow from "../components/CursorGlow";
-import Header from "../components/layout/Header";
-import Footer from "../components/layout/Footer";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import Layout from "../components/layout/Layout";
 import Hero from "../components/sections/Hero";
 import AboutPreview from "../components/sections/AboutPreview";
 import Skills from "../components/sections/Skills";
 import Works from "../components/sections/Works";
 import Contact from "../components/sections/Contact";
-import BotIcon from "../components/BotIcon";
-import SplashScreen from "../components/SplashScreen";
 
 function HomePage() {
-  const [showSplash, setShowSplash] = useState(true);
+  const { hash } = useLocation();
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowSplash(false), 2400);
-    return () => clearTimeout(timer);
-  }, []);
+    if (hash) document.querySelector(hash)?.scrollIntoView();
+  }, [hash]);
 
   return (
-    <motion.div
-      className="page-shell"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.7, ease: "easeInOut" }}
-    >
-      <AnimatePresence>{showSplash && <SplashScreen />}</AnimatePresence>
-      <ParticleField />
-      <CursorGlow />
-      <FloatingIcons />
-      <Header />
+    <Layout>
       <Hero />
       <AboutPreview />
       <Skills />
       <Works />
       <Contact />
-      <Footer />
-      <BotIcon />
-    </motion.div>
+    </Layout>
   );
 }
 
