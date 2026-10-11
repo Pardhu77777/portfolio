@@ -62,3 +62,4 @@ app/frontend/public/assets/websites/
 
 # Claude Code session data
 .claude/
+r2-upload/

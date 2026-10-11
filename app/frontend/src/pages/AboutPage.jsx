@@ -131,7 +131,7 @@ function AboutPage() {
             <div className="spin-border relative">
               <div className="aspect-square overflow-hidden rounded-[29px] bg-surface">
                 <img
-                  src="https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/about-me.jpg"
+                  src="https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/about-me.webp"
                   alt="Pardhu Mopidevi"
                   className="h-full w-full object-cover"
                 />

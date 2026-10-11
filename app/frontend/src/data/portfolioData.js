@@ -1,7 +1,7 @@
 ﻿export const roles = [
   {
     title: "Full-Stack Software Developer",
-    image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/software-developer.png",
+    image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/software-developer.webp",
     accent: "#2563eb",
   },
   {
@@ -11,12 +11,12 @@
   },
   {
     title: "Creative Graphic Designer",
-    image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/graphic-designer-main.jpg",
+    image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/graphic-designer.webp",
     accent: "#1d4ed8",
   },
   {
     title: "Professional Video Editor",
-    image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/video-editor-main.jpg",
+    image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/hero/video-editor.webp",
     accent: "#2563eb",
   },
   {
