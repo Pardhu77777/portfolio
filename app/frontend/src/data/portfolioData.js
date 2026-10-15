@@ -149,12 +149,6 @@ export const works = {
     year: "",
   },
   {
-    id: "poster-home-7",
-    title: "3rd post",
-    image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_home/3rd%20post.png",
-    year: "",
-  },
-  {
     id: "poster-home-8",
     title: "image1",
     image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_home/image1.png",
@@ -162,6 +156,30 @@ export const works = {
   },
 ],
   posters: [
+    {
+      id: "poster-n1",
+      title: "Poster",
+      image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_all/posters_landscape/photo_2026-10-15_16-12-17.jpg",
+      year: "",
+    },
+    {
+      id: "poster-n2",
+      title: "Poster",
+      image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_all/posters_landscape/photo_2026-10-15_16-12-08.jpg",
+      year: "",
+    },
+    {
+      id: "poster-n3",
+      title: "Poster",
+      image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_all/posters_landscape/photo_2026-10-15_16-12-07.jpg",
+      year: "",
+    },
+    {
+      id: "poster-n4",
+      title: "Poster",
+      image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_all/posters_landscape/photo_2026-10-15_16-12-08%20(2).jpg",
+      year: "",
+    },
     {
       id: "poster-1",
       title: "01.08.2021.....",
@@ -241,12 +259,6 @@ export const works = {
       year: "",
     },
     {
-      id: "poster-14",
-      title: "band thumb",
-      image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_all/posters_landscape/band thumb.jpg",
-      year: "",
-    },
-    {
       id: "poster-15",
       title: "banner",
       image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_all/posters_landscape/banner.jpg",
@@ -304,12 +316,6 @@ export const works = {
       id: "poster-24",
       title: "worship_night_thumb",
       image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_all/posters_landscape/worship_night_thumb.jpg",
-      year: "",
-    },
-    {
-      id: "poster-51",
-      title: "3rd post",
-      image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_home/3rd%20post.png",
       year: "",
     },
     {
@@ -480,7 +486,7 @@ export const works = {
     {
       id: "video-home-1",
       title: "IPC Service",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_home/ipc.mp4",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/IPC.mp4?v=2",
       year: "",
     },
     {
@@ -510,11 +516,59 @@ export const works = {
     {
       id: "video-home-5",
       title: "LCCT Promise",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_home/lcct_promise.mp4",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/lcct_promise.mp4?v=2",
       year: "",
     },
   ],
   videosAll: [
+    {
+      id: "video-a1",
+      title: "AI Video Scene",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/AI_VIDEO_SCENE_1.mp4",
+      year: "",
+    },
+    {
+      id: "video-a2",
+      title: "Choose Someone",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/CHOOSE_SOMEONE_SOCIAL_MEDIA.mp4",
+      year: "",
+    },
+    {
+      id: "video-a3",
+      title: "Couple Praying AI",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/COUPLE_PRAYING_AI.mp4",
+      year: "",
+    },
+    {
+      id: "video-a4",
+      title: "MEGA HELP – BOTB Intro",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/INTRO_MEGA_HELP_BOTB_INTRO.mp4",
+      year: "",
+    },
+    {
+      id: "video-a5",
+      title: "MEGA Film",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/MEGA_FILM.mp4",
+      year: "",
+    },
+    {
+      id: "video-a6",
+      title: "MEGA HELP Logo Loop",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/MEGA_HELP_LOGO_LOOP.mp4",
+      year: "",
+    },
+    {
+      id: "video-a7",
+      title: "MEGA Warm-Up Intro",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/MEGA_WARM_UP_INTRO.mp4",
+      year: "",
+    },
+    {
+      id: "video-a8",
+      title: "MEGA Winners",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/MEGA_WINNERS_FIRST.mp4",
+      year: "",
+    },
     {
       id: "video-n0",
       title: "Special Invitation",
@@ -534,81 +588,21 @@ export const works = {
       year: "",
     },
     {
-      id: "video-n1",
-      title: "Wednesday Highlights",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/260617_WEDNESDAY_HIGHLIGHTS_SOCIAL_MEDIA.mp4",
-      year: "",
-    },
-    {
-      id: "video-n2",
-      title: "Arise",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/Arise_1.mp4",
-      year: "",
-    },
-    {
       id: "video-n3",
       title: "Can't Can Pencil Art",
       video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/CAN'T_CAN_PENCIL_ART_SOCIAL_MEDIA.mp4",
       year: "",
     },
     {
-      id: "video-n5",
-      title: "Couple Praying AI",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/COUPLE_PRAYING_AI.mp4",
-      year: "",
-    },
-    {
-      id: "video-n6",
-      title: "Comfort vs Discipline",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/Comfort_vs_Discipline_Nmp4.mp4",
-      year: "",
-    },
-    {
-      id: "video-n7",
-      title: "Don't Stop",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/DON'T_STOP_SOCIAL_MEDIA.mp4",
-      year: "",
-    },
-    {
       id: "video-n8",
       title: "FOD",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/FOD.mp4",
-      year: "",
-    },
-    {
-      id: "video-n9",
-      title: "Godllywood Self-Help Reels",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/GODLLYWOOD_SELF-HELP_REELS_ANIME_2.mp4",
-      year: "",
-    },
-    {
-      id: "video-n10",
-      title: "Holy Spirit Captions",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/HOLY_SPIRIT_CAPTIONS.mp4",
-      year: "",
-    },
-    {
-      id: "video-n11",
-      title: "Something Is Missing",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/SOMETHING_IS_MISSING_V1.mp4",
-      year: "",
-    },
-    {
-      id: "video-n13",
-      title: "Sunday of Return",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/SUNDAY_OF_RETURN.mp4",
-      year: "",
-    },
-    {
-      id: "video-n14",
-      title: "Wednesday Service",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/WEDNESDAY_SERVICE.mp4",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/FOD.mp4?v=2",
       year: "",
     },
     {
       id: "video-n15",
       title: "Church YouTube Intro",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/CHURCH_YT_INTRO_HD.mp4",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/CHURCH_YT_INTRO_HD.mp4?v=2",
       year: "",
     },
     {
@@ -618,15 +612,9 @@ export const works = {
       year: "",
     },
     {
-      id: "video-n17",
-      title: "Logo Design",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/logo%20design_1.mp4",
-      year: "",
-    },
-    {
       id: "video-1",
       title: "IPC Service",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/ipc.mp4",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/IPC.mp4?v=2",
       year: "",
     },
     {
@@ -656,7 +644,7 @@ export const works = {
     {
       id: "video-6",
       title: "LCCT Promise",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/lcct_promise.mp4",
+      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/lcct_promise.mp4?v=2",
       year: "",
     },
     {

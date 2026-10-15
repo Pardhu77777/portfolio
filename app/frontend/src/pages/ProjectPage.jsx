@@ -171,7 +171,17 @@ function ProjectPage() {
         {(project?.video || project?.image) && (
           <div className="glass mt-10 overflow-hidden p-2.5">
             {project.video ? (
-              <video src={project.video} className="h-auto w-full rounded-2xl bg-black" controls preload="metadata" playsInline />
+              <video
+                src={project.video}
+                className="h-auto w-full rounded-2xl bg-black"
+                controls
+                controlsList="nodownload noremoteplayback noplaybackrate"
+                disablePictureInPicture
+                disableRemotePlayback
+                onContextMenu={(event) => event.preventDefault()}
+                preload="metadata"
+                playsInline
+              />
             ) : (
               <img src={project.image} alt={project.title} className="h-auto w-full rounded-2xl" />
             )}

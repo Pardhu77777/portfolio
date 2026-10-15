@@ -39,6 +39,10 @@ function LazyVideo({ src, className = "", autoPlay = false, controls = false }) 
       loop={autoPlay}
       playsInline
       controls={controls}
+      controlsList="nodownload noremoteplayback noplaybackrate"
+      disablePictureInPicture
+      disableRemotePlayback
+      onContextMenu={(event) => event.preventDefault()}
       preload={autoPlay ? "auto" : "metadata"}
     />
   );

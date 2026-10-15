@@ -34,6 +34,10 @@ function Cover({ project }) {
         src={project.video}
         className="h-auto w-full rounded-2xl bg-black"
         controls
+        controlsList="nodownload noremoteplayback noplaybackrate"
+        disablePictureInPicture
+        disableRemotePlayback
+        onContextMenu={(event) => event.preventDefault()}
         preload="metadata"
         playsInline
       />
