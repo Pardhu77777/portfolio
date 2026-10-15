@@ -71,7 +71,6 @@ function WorksListPage() {
                 <div className="aspect-video overflow-hidden rounded-2xl bg-ink">
                   <LazyVideo src={item.video} className="h-full w-full object-contain" controls />
                 </div>
-                <p className="px-2 pb-1.5 pt-3.5 font-display text-sm font-semibold">{item.title}</p>
               </div>
             ))}
           </div>

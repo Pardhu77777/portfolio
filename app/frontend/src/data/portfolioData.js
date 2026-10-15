@@ -148,12 +148,6 @@ export const works = {
     image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_home/worship_night_thumb.jpg",
     year: "",
   },
-  {
-    id: "poster-home-8",
-    title: "image1",
-    image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_home/image1.png",
-    year: "",
-  },
 ],
   posters: [
     {
@@ -316,12 +310,6 @@ export const works = {
       id: "poster-24",
       title: "worship_night_thumb",
       image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_all/posters_landscape/worship_night_thumb.jpg",
-      year: "",
-    },
-    {
-      id: "poster-52",
-      title: "image1",
-      image: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/posters_home/image1.png",
       year: "",
     },
     {
@@ -573,24 +561,6 @@ export const works = {
       id: "video-n0",
       title: "Special Invitation",
       video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/SPECIAL_INVITATION.mp4",
-      year: "",
-    },
-    {
-      id: "video-n01",
-      title: "People's Thoughts",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/PEOPLE'S_THOUGHTS_SOCIAL_MEDIA.mp4",
-      year: "",
-    },
-    {
-      id: "video-n02",
-      title: "Social Media Highlights",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/260719_SOCIAL_MEDIA_LOW_QUALITY.mp4",
-      year: "",
-    },
-    {
-      id: "video-n3",
-      title: "Can't Can Pencil Art",
-      video: "https://pub-74e1ba505c0e439897158937c7718eb7.r2.dev/videos_all/CAN'T_CAN_PENCIL_ART_SOCIAL_MEDIA.mp4",
       year: "",
     },
     {
